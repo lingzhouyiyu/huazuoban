@@ -1,0 +1,15 @@
+@import "../../wxParse/wxParse.wxss";
+/* pages/growingDetail/growingDetail.wxss */
+
+.container  image{
+  margin: 0;
+  padding: 0;
+  display:flex;
+  width: 100% !important;
+}
+
+.wxParse-p{
+ margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+}

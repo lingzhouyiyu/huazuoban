@@ -1,0 +1,38 @@
+<view class='container'>
+  <!-- <view class='topwrap'>
+    <view class='top'>
+      <view class='message {{tapcurrent=="0"?"txtcolor":""}}' catchtap='menutap' data-current='0'>
+        <text>三人挑战</text>
+        <view class='bottomline {{tapcurrent=="0"?"":"bottomlines"}}'></view>
+      </view>
+      <view class='notice {{tapcurrent=="1"?"txtcolor":""}}' catchtap='menutap' data-current='1'>
+        <text>五人挑战</text>
+        <view class='bottomline {{tapcurrent=="1"?"":"bottomlines"}}'></view>
+      </view>
+    </view>
+  </view> -->
+  <view class='kaiqibtn' bindtap='gotomineChallenge'>开启组队挑战</view>
+  <view class='tztitle' wx:if='{{isshow}}'>正在挑战</view>
+  <view class='itemwrap' wx:if='{{isshow}}'>
+    <view class='item' wx:for='{{groupList}}' wx:key=''>
+      <view class='itemleft'>
+        <view class='headerimg'>
+          <image src='{{item.ncImage}}'></image>
+        </view>
+        <view class='content'>
+          <view class='contenttop'>
+            <text>队长{{item.leaderNcname}}</text>
+            <text class='marleft'>还差{{item.teamSize-item.hasCount}}人</text>
+          </view>
+          <view class='contentbottom'>
+            <text>剩余时间</text>
+            <text class='marleft'>{{item.difftime}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='itemright'>
+        <view class='gobtn' bindtap='jionChallengeTeam' data-activityid='{{item.activityId}}' data-teamid='{{item.id}}'>去参团</view>
+      </view>
+    </view>
+  </view>
+</view>

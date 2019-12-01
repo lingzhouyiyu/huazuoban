@@ -1,0 +1,73 @@
+<view class='container'>
+  <image src='../../images/caiji.jpg' class='topimg'></image>
+  <view class='xuqiu'>
+    <view class='xuqiutitle'>简述您的需求：</view>
+    <view class='textareawrap'>
+      <view class='colorred xuqiusm'>*</view>
+      <textarea placeholder='在此输入您的需求' class='xuqiutxt' bindblur='getcontext'></textarea>
+    </view>
+
+  </view>
+  <view class='submitoptions'>
+    <view class='xuqiutitles'>您的联系方式：</view>
+    <view class='inputwrap'>
+      <view class='inputtitle'>
+        <view>
+          <text class='colorred'>*</text>
+          <text>姓</text>
+        </view>
+        <text>名:</text>
+      </view>
+      <input class='myinput' bindblur='getname'></input>
+    </view>
+    <view class='inputwrap'>
+      <view class='inputtitles'>
+        <view>
+          <text class='colorred'>*</text>
+        </view>
+        <text>手机号码:</text>
+      </view>
+      <input class='myinput' bindblur='getphone'></input>
+    </view>
+    <view class='inputwrap'>
+      <view class='inputtitles'>
+        <view>
+          <text class='colorred'></text>
+        </view>
+        <text class='margin'>电子邮箱:</text>
+      </view>
+      <input class='myinput' bindblur='getemail'></input>
+    </view>
+    <view class='inputwrap'>
+      <view class='inputtitles'>
+        <view>
+          <text class='colorred'>*</text>
+        </view>
+        <text>所在城市:</text>
+      </view>
+      <input class='myinput' bindblur='getcity'></input>
+    </view>
+    <view class='inputwrap'>
+      <view class='inputtitles'>
+        <view>
+          <text class='colorred'></text>
+        </view>
+        <text class='margin'>公司名称:</text>
+      </view>
+      <input class='myinput' bindblur='getcompany'></input>
+    </view>
+    <view class='inputwrap'>
+      <view class='inputtitle'>
+        <view>
+          <text class='colorred'> </text>
+          <text class='margin'>职</text>
+        </view>
+        <text>位:</text>
+      </view>
+      <input class='myinput' bindblur='getjob'></input>
+    </view>
+  </view>
+  <view class='subbtn'>
+    <view class='btn' bindtap='submitData'>提交</view>
+  </view>
+</view>

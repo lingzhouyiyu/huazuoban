@@ -1,0 +1,39 @@
+<view class='container'>
+
+  <!-- 多人挑战 -->
+  <view class='manywrap'>
+    <view class='times textgray'>
+      <image src='../../images/mall/timedown.png'></image>
+      <text>{{teamData.difftime}}</text>
+    </view>
+    <view class='haicha' wx:if='{{!isFullTag}}'>
+      <text class='nomal'>还差</text>
+      <text class='haichanum colorpinks'>{{teamData.teamSize-teamData.hasCount}}</text>
+      <text class='nomal'>人组团成功</text>
+    </view>
+    <view class='{{peoplenum==3?"quanquan":"quanquans"}}'>
+      <view class='quanquanitem {{index==0?"quanquanitems":""}}' style='width:{{windowWidth*0.17}}px;height:{{windowWidth*0.17}}px;' wx:for='{{challengeMembers}}' wx:key='' data-ncname='{{item.ncName}}' data-openid='{{item.openId}}' bindtap='getmyShareMember'>
+        <view class='floatview backcolorpinks' wx:if='{{index==0}}'>队长</view>
+        <image class='firstimg' src='{{item.ncImage}}' style='width:{{windowWidth*0.17}}px;height:{{windowWidth*0.17}}px;' wx:if='{{index==0}}'></image>
+        <image class='otherimg' src='{{item.ncImage}}' style='width:{{windowWidth*0.17}}px;height:{{windowWidth*0.17}}px;' wx:if='{{index!=0}}'></image>
+      </view>
+    </view>
+
+    <button open-type='share' class='btnview backcolorpinks' id="1" wx:if='{{!isFullTag&&isLeaderTag}}'>邀请好友组队</button>
+    <button open-type='share' class='btnview backcolor' id="2">邀请好友购买</button>
+  </view>
+  <view class='partlines'></view>
+  <view class='chatitle'>
+    <text class='graycolor'>{{currentNcname}}</text>
+    <text>还差</text>
+    <text class='colorpinks'>{{effectiveSize-buyList.length}}</text>
+    <text>人，挑战成功</text>
+  </view>
+  <view class='contentitem' wx:for='{{buyList}}' wx:key=''>
+    <image src='{{item.avatarUrl}}' class='headerimg'></image>
+    <text>{{item.nickName}}</text>
+  </view>
+</view>
+<view class='float' bindtap='gotomall'>
+  <image src='../../images/backtiaozhan.png' class='floatimg'></image>
+</view>

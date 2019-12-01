@@ -1,0 +1,93 @@
+/* components/protocol/protocol.wxss */
+/* 弹框 */
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(90, 90, 90);
+  z-index: 9000;
+  opacity: 0.7;
+}
+
+.modalDlg {
+  width: 650rpx;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  margin: -450rpx 32rpx;
+  background-color: #fff;
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx 20rpx 0 20rpx;
+}
+
+.save_money {
+  color: #fff;
+  width: 370rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  /* background: #1cb2fd; */
+  background-color: #ff4081;
+  text-align: center;
+  border-radius: 12rpx;
+  margin-bottom: 50rpx;
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.close_mask {
+  /* color: #1cb2fd; */
+  position: relative;
+  font-size: 30rpx;
+  /* background-color: yellow; */
+  margin-bottom: 32rpx;
+  color: #000;
+  font-weight: bold;
+}
+
+.myscroll {
+  width: 100%;
+  height: 600rpx;
+}
+
+.itemTitle {
+  width: 100%;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemContent {
+  width: 100%;
+  font-size: 26rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.itemContents {
+  width: 100%;
+  font-size: 26rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-indent: 2em;
+}

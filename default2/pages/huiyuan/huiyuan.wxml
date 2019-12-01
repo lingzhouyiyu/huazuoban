@@ -1,0 +1,73 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='container'>
+  <view class="topwrap" bindtap="topselecthuiyuan">
+    <!-- <image class="topselect" src="../../images/free/select.png" wx:if='{{tophuiyuanData.isSelected}}'></image> -->
+    <view class="top">
+      <view class="contentwrap">
+        <view class="contentleft">
+          <image src="../../images/free/logo.png" class="contentimg"></image>
+        </view>
+        <view class="contentright">
+          <text class="contenttitle">{{tophuiyuanData.title}}</text>
+          <text class="youxiao">有效期：{{tophuiyuanData.effectiveDay}}天</text>
+        </view>
+      </view>
+      <view class="danyue">花粉特权</view>
+    </view>
+    <view class="bottom">
+      <view class="wrap">
+        <view class="bottomleft">
+          <!-- <image class="bottomleftimg" src="../../images/free/warn.png"></image>
+          <view class="bottomlefttext">办卡通知及相关注意事项</view> -->
+        </view>
+        <view class="bottomright">
+          售价：￥{{tophuiyuanData.price}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="tipsview">
+    <image src="../../images/free/tips.png" class="tipsviewimg"></image>
+    <view class="tipsviewtext">{{noticeTxt}}</view>
+  </view>
+  <view class="kapianwrap">
+    <view class="kapianitem" wx:for='{{huiyuanData}}' wx:key='' bindtap="selecthuiyuan" data-id="{{item.id}}">
+      <view class="topdot"></view>
+      <view class="bottomdot"></view>
+      <view class="imgwrap" wx:if='{{item.isSelected}}'>
+        <image class="select" src="../../images/free/select.png"></image>
+      </view>
+      <view class="kapiancontent">
+        <view class="kapianleft">
+          <image src="../../images/free/logo.png" class="kapianlogo"></image>
+        </view>
+        <view class="kapianright">
+          <text class="miaoshu">{{item.title}}</text>
+          <view class="jiage">￥
+            <text class='price'>{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="partline"></view>
+  <view class="gorka">
+    <view class="goukatitle">
+      <view class="hengxian">
+        <view class="hengxianitem"></view>
+        <view class="hengxianitem"></view>
+      </view>
+      <view class="goukatext">购卡须知</view>
+      <view class="hengxian">
+        <view class="hengxianitem"></view>
+        <view class="hengxianitem"></view>
+      </view>
+    </view>
+    <view class="goukacontent">
+      <view class="xuzhiclass">
+        <template is="wxParse" data="{{wxParseData:contexts.nodes}}" />
+      </view>
+    </view>
+  </view>
+  <view class="kaika" bindtap="downOrder">立即开卡</view>
+</view>

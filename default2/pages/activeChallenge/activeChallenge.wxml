@@ -1,0 +1,38 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='container'>
+  <view class='contentdetail'>
+   <template is="wxParse" data="{{wxParseData:activeDetail.nodes}}" />
+  </view>
+  <!-- 底部按钮 -->
+  <view class='bottomBtn'>
+    <view class='icon' bindtap='gotomall'>
+      <image src='../../images/mall/fang.png'></image>
+    </view>
+    <view class='order' bindtap='single'>单人挑战</view>
+    <view class='buys' bindtap='many'>多人挑战</view>
+  </view>
+</view>
+<!-- 单人挑战弹框 -->
+<view class="modalDlg" wx:if="{{singletag}}">
+  <view class='close_mask colorpinks'>系统提示</view>
+  <view class='detail_text'>恭喜您，报名成功！</view>
+  <button class='save_money backcolorpinks' bindtap="gotomineChallenge">前往“我的挑战”查看</button>
+</view>
+<view class="mask" catchtouchmove="preventTouchMove" bindtap="close_mask" wx:if="{{singletag}}"></view>
+
+<!-- 多人挑战弹框 -->
+<view class="modalDlg" wx:if="{{manytag}}">
+  <view class='manyclass'>{{toptxt}}</view>
+  <view class='manytext textgray'>
+    <view class='textitem {{selected=="0"?"colorpinks":""}}' catchtap='selectoptions' data-select='0'>
+      <image src='../../images/{{selected=="0"?"dianlight":"dian"}}.png'></image>
+      <text>三人队伍</text>
+    </view>
+     <view class='textitem {{selected=="1"?"colorpinks":""}}' catchtap='selectoptions' data-select='1'>
+      <image src='../../images/{{selected=="1"?"dianlight":"dian"}}.png'></image>
+      <text>五人队伍</text>
+    </view>
+  </view>
+  <button class='save_money backcolorpinks' bindtap="changetxt" >{{manytxt}}</button>
+</view>
+<view class="mask" catchtouchmove="preventTouchMove" bindtap="close_mask" wx:if="{{manytag}}"></view>

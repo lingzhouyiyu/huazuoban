@@ -1,0 +1,36 @@
+<view class='container'>
+  <view class='part_line3'></view>
+  <view class='itemwrap'>
+    <view class='item'>
+      <view class='title'>收货人姓名：</view>
+      <input class='name' placeholder='请输入您的姓名' bindinput='getuserName' bindblur='getuserName'></input>
+    </view>
+  </view>
+  <view class='itemwrap'>
+    <view class='item'>
+      <view class='title'>联系方式：</view>
+      <input class='phone' placeholder='请输入手机号' bindinput='getphone' bindblur='getphone'></input>
+    </view>
+  </view>
+  <view class='itemwrap'>
+    <view class='items'>
+      <view class='title'>省市区：</view>
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" class="picker">
+        <view class='itemleft'>
+          <text class='textdetail'>{{region[0]}}{{region[1]}}{{region[2]}}</text>
+          <image src='../../images/mall/goto.png' class='itemright'></image>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='itemwraps'>
+    <view class='itemdetail'>
+      <view class='title'>详细地址：</view>
+      <textarea class='detailaddress' placeholder='请输入详细地址' bindinput='getaddress' bindblur='getaddress'></textarea>
+    </view>
+  </view>
+  <!-- <view class='part_line3'></view> -->
+</view>
+<view class='btnwrap'>
+  <view class='savebtn' bindtap='gotoconfirmOrder'>保存地址</view>
+</view>

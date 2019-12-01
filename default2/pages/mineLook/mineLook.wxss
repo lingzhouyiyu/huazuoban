@@ -1,0 +1,210 @@
+page {
+  background-color: #f2f2f2;
+}
+
+.topwrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-top: 2rpx solid #f2f2f2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.top {
+  width: 50%;
+  height: 70rpx;
+  display: flex;
+  justify-content: center;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-top: 20rpx;
+}
+
+.message {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: red; */
+  flex-direction: column;
+}
+
+.notice {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: yellow; */
+  flex-direction: column;
+}
+
+.txtcolor {
+  color: #ff6398;
+}
+
+.bottomline {
+  width: 55rpx;
+  height: 5rpx;
+  background-color: #ff6398;
+}
+
+.bottomlines {
+  width: 55rpx;
+  height: 5rpx;
+  background-color: #fff;
+}
+
+
+
+/* 瀑布样式 */
+.thend{
+  font-size: 24rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2rpx;
+  /* font-style: italic; */
+  margin-bottom: 20rpx;
+  margin-top: 50rpx;
+}
+.partlinsb{
+  width: 20%;
+height: 1rpx;
+background-color: #888;
+}
+.asdfasdf{
+  margin: 0 10rpx;
+}
+.myscroll{
+  width: 100%;
+  /* background-color: red; */
+}
+.scrollwrap{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.falls {
+  width: 94%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 120rpx;
+}
+
+.falsitem {
+  width: 48.5%;
+  height: auto;
+   border-radius: 8rpx;
+}
+
+.items {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  padding-bottom: 20rpx;
+    border-radius: 8rpx;
+    border-style: solid;
+ box-shadow:0px 1px 1px 0px #ccc;
+ border-width: 0rpx;
+}
+
+.itemsimage {
+  width: 100%;
+   border-top-left-radius: 8rpx;
+  border-top-right-radius: 8rpx;
+}
+
+.itemname {
+  width: 90%;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  font-size: 28rpx;
+}
+
+.itembottoms {
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.myname {
+  width: 50%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.btnbuy {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.fuhao {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 10rpx;
+}
+
+.buyimg {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+
+.buytxt {
+ font-size: 26rpx;
+}
+
+.meishu {
+   font-size: 24rpx;
+}
+
+/* 商品样式 */
+
+.mygoodswrap {
+  width: 100%;
+  /* background-color: red; */
+  height: auto;
+  margin-top: 115rpx;
+  overflow: hidden;
+}
+
+.mygoods {
+  width: 96%;
+  height: auto;
+  /* background-color: yellow; */
+  padding-left: 13rpx;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.mygoodsitem {
+  margin-left: 10rpx;
+  margin-bottom: 10rpx;
+  /* background-color: green; */
+}
+
+.mygoodsitem image {
+  width: 100%;
+  height: 100%;
+}

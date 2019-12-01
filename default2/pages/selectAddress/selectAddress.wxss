@@ -1,0 +1,82 @@
+page{
+  background-color: #f2f2f2;
+}
+.topwrap{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+.topwraps{
+  width: 92%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  background-color: #fff;
+}
+.topwraps image{
+  width: 25rpx;
+  height: 25rpx;
+}
+.addresscontentwrap{
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+padding: 20rpx 0 0 0;
+margin-top: 15rpx;
+background-color: #fff;
+}
+.addresscontent{
+width: 92%;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+}
+.addressitemone{
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.lallalala{
+  font-weight: bold;
+  margin-right: 20rpx;
+}
+.addressitemtwo{
+  width: 100%;
+  margin-top: 30rpx;
+}
+.addressitemthree{
+width: 100%;
+height: 3rpx;
+background-color: #f2f2f2;
+margin-top: 20rpx;
+}
+.addressitemfour{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+padding: 15rpx 0;
+}
+.addbottombtn{
+  padding: 12rpx 35rpx;
+  border: 2rpx solid #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20rpx;
+  border-radius: 10rpx;
+  
+}
+.moren{
+  font-size: 24rpx;
+  color: #ff4081;
+}

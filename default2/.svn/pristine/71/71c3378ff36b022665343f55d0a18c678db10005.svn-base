@@ -1,0 +1,69 @@
+<view class='container'>
+  <view class='contentwrap' wx:for='{{commentList}}' wx:key=''>
+    <view class='wrap'>
+      <view class='headerimg'>
+        <image src='{{item.nickImage}}'></image>
+      </view>
+      <view class='contenttxtxt'>
+        <view class='nameview'>
+          <view>
+            <text class='name'>{{item.nickName}}</text>
+          </view>
+          <view class='nameright textgray'>
+            <text wx:if='{{selfopenId==item.openId}}' catchtap='commentDelete' data-commentid='{{item.id}}' data-openid='{{item.openId}}'>删除</text>
+            <text class='dian' wx:if='{{selfopenId==item.openId}}'>.</text>
+            <text bindtap='addSaveReplay' data-articleid='{{item.articleId}}' data-commentid='{{item.id}}' data-touserid='{{item.openId}}' data-tousernickimage='{{item.nickImage}}' data-tousernickname='{{item.nickName}}'>回复</text>
+            <!-- <text class='dian'>.</text>
+            <image src='../../images/find/zan.png'></image> 
+            <text>1</text> -->
+          </view>
+        </view>
+        <view class='time textgray'>{{item.createTime}}</view>
+        <view class='distext'>{{item.replyContent}}</view>
+        <input placeholder='写回复~' class='replayinput' bindfocus='auth' focus='{{item.focus}}' wx:if='{{item.showReplay}}' bindconfirm='submitreplay' data-id='{{item.id}}'></input>
+        <view class='huifudetail'>
+          <view class='huifuitem' wx:for='{{item.replyList}}' wx:key='' wx:for-item='replayitem'>
+            <view class='huifutop'>
+              <view class='headerimgs'>
+                <image src='{{replayitem.replyUserNickImage}}'></image>
+              </view>
+              <view class='contenttxtxts'>
+                <view class='nameview'>
+                  <view>
+                    <text class='names'>{{replayitem.replyUserNickName}}</text>
+                    <!-- <text>(作者)</text> -->
+                  </view>
+                  <view class='nameright textgray'>
+                    <text wx:if='{{selfopenId==replayitem.replyUserId}}' catchtap='replayDelete' data-replayid='{{replayitem.id}}' data-replyiserid='{{replayitem.replyUserId}}'>删除</text>
+                    <!-- <text>回复</text> -->
+                    <!-- <text class='dian'>.</text>
+                    <image src='../../images/find/zan.png'></image>
+                    <text>1</text> -->
+                  </view>
+                </view>
+                <view class='time textgray'>{{replayitem.createTime}}</view>
+              </view>
+            </view>
+            <view class='bottomitems'>
+              <!-- <text class='textgray'>回复</text>
+              <text class='textgray aksdkfa'>@</text>
+              <text class='huifuname'>十一月的蜂蜜：</text> -->
+              <text>{{replayitem.replyContent}}</text>
+            </view>
+            <view class='partlines'></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class='bottomoptions'>
+  <view class='one'>
+    <image src='../../images/find/header.png'></image>
+  </view>
+  <view class='two'>
+    <input placeholder='写评论...' class='myinput' bindblur='getcomment' bindfocus='getfocus' bindconfirm='addSaveComment' value='{{inputValue}}'></input>
+  </view>
+  <view class='three' bindtap='addSaveComment'>发送</view>
+</view>

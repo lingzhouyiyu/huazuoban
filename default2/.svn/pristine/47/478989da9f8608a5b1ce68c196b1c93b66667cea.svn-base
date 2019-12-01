@@ -1,0 +1,24 @@
+<view class='container'>
+  <view class='changeitemwrap' wx:for='{{challengeList}}' wx:key='' bindtap='gotomineChallenge' data-teamtype='{{item.teamType}}' data-id='{{item.id}}' data-activityid='{{item.activityId}}'>
+    <view class='changeitem'>
+      <view class='itemleft'>
+        <view class='destxt'>队长</view>
+        <image src='{{item.ncImage}}'></image>
+      </view>
+      <view class='itemright'>
+        <view class='righttop'>
+          <text>{{item.teamType=='1'?"单":item.teamType}}人挑战</text>
+          <text class='{{item.status=="0"?"colorpinks":""}}'>{{item.status=='0'?'正在进行中':'已结束'}}</text>
+        </view>
+        <view class='rightbottom'>
+          <text wx:if='{{item.isFull=="0"}}'>{{item.teamType=="1"?"":"还差"+(item.teamSize-item.hasCount)+"人"}}</text>
+          <text wx:if='{{item.isFull=="1"}}'>{{item.teamType=="1"?"":"已满员"}}</text>
+          <text>{{item.difftime}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='float' bindtap='gotomall'>
+  <image src='../../images/backtiaozhan.png' class='floatimg'></image>
+</view>

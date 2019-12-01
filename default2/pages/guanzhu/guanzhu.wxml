@@ -1,0 +1,13 @@
+<view class='container'>
+  <view class='itemwrap'>
+    <view class='items' wx:for='{{guanzhuData}}' wx:key=''>
+      <view class='item'>
+        <view class='itemleft'>
+          <image src='{{item.avatarUrl}}'></image>
+          <text>{{item.nickName}}</text>
+        </view>
+        <view class='itemright' bindtap='clicks' data-id='{{item.appletsOpenId}}'>已关注</view>
+      </view>
+    </view>
+  </view>
+</view>

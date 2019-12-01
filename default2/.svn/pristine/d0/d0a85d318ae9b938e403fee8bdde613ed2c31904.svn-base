@@ -1,0 +1,160 @@
+@import "../../wxParse/wxParse.wxss";
+.contentdetail{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.contentdetail  image{
+  margin: 0;
+  padding: 0;
+  display:flex;
+  width: 100% !important;
+}
+
+.wxParse-p{
+ margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+}
+/* 底部按钮 */
+
+.bottomBtn {
+  width: 100%;
+  height: 90rpx;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+.icon {
+  width: 12%;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon image {
+  width: 52rpx;
+  height: 52rpx;
+}
+
+
+.order {
+  width: 44%;
+  background-color: #ff6398;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buys {
+  width: 44%;
+  /* background-color: #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff4081;
+}
+/* 单人弹框 */
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background:#000;
+  z-index: 9000;
+  opacity: 0.5;
+}
+ 
+.modalDlg {
+  width: 540rpx;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  margin: -190rpx 110rpx;
+  background-color: #fff;
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx 0rpx 0 0;
+}
+ 
+
+ 
+.save_money {
+  color: #fff;
+  width: 370rpx;
+  height: 50rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  margin-bottom: 50rpx;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+ 
+.close_mask {
+  position: relative;
+  font-size: 30rpx;
+  /* background-color: yellow; */
+  margin-bottom: 32rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.detail_text{
+  width: 100%;margin-bottom: 30rpx;
+  /* background-color: red; */
+  font-size: 36rpx;
+  color: rgb(50, 50, 50);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.manyclass{
+   position: relative;
+  font-size: 30rpx;
+  /* background-color: yellow; */
+  margin-bottom: 36rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.manytext{
+   width: 76%;
+   margin-bottom: 30rpx;
+  /* background-color: red; */
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.manytext image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+}
+.textitem{
+  display: flex;
+  height: 50rpx;
+  justify-content: center;
+  align-items: center;
+}

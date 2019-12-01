@@ -1,0 +1,32 @@
+<view class='container'>
+  <view class='topimg'>
+    <view class='imgtxt'>总计签到
+      <text class='xtxtxttx'>{{totalCount}}</text> 天
+    </view>
+    <image src='../../images/mine/signin.png' mode='widthFix'></image>
+  </view>
+  <view class='checkrule'>
+    <view class='ruleleft'>签到有惊喜</view>
+    <!-- <view class='ruleright'>
+      <text class='textgray'>查看规则</text>
+      <image src='../../images/mall/goto.png'></image>
+    </view> -->
+  </view>
+
+  <picker mode="date" class='date' value="{{date}}"  fields='month' bindchange="bindDateChange">
+    <text>签到记录</text>
+    <text>（{{date}}）</text>
+    <image src='../../images/rili.png' class='dateimg'></image>
+  </picker>
+
+  <view class='dijitian'>
+    <view class='dijitianitem' wx:for="{{recordList}}" wx:key=''>
+      <text>{{item.signTimenew}}</text>
+      <view class='quanquan colorpinks'>+5</view>
+    </view>
+   
+   
+  </view>
+
+  <view class='bottombtn backcolorpinks' bindtap='addSaveSign'>立即签到</view>
+</view>

@@ -1,0 +1,78 @@
+page{
+  background-color: #f2f2f2;
+}
+.topwrap{
+  width: 82%;
+  height: 150rpx;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topitem{
+  width: 47%;
+  height: 90rpx;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 45rpx;
+  color: #fff;
+  font-size: 30rpx;
+  border: none;
+}
+.topitem::after{
+   border: none;
+  outline: none;
+}
+.topitems{
+ width: 47%;
+  height: 90rpx;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 45rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+.helpcenter{
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.helpcenter text{
+font-size: 30rpx;
+}
+.helpwrap{
+  width: 92%;
+  height: 96rpx;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contactitemswrap{
+  width: 100%;
+  display: flex;
+   background-color: #fff;
+   justify-content: center;
+  align-items: center;
+  border-bottom: 3rpx solid #f2f2f2;
+}
+.contactitems{
+  width: 92%;
+  height: 90rpx;
+  /* background-color: red; */
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+}
+.contactitems image{
+  width: 25rpx;
+  height: 25rpx;
+}

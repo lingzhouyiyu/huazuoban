@@ -1,0 +1,245 @@
+/* 关注样式 */
+
+.fuckerwrap {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.followwrap {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.followtop {
+  width: 94%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: yellow; */
+}
+
+.followtopleft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.followtopleft image {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 10rpx;
+  border-radius: 50%;
+}
+
+.followtopright image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.followtopright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.followbtn {
+  border: 2rpx solid #ff6398;
+  border-radius: 30rpx;
+  padding: 0 20rpx;
+  /* margin-right: 25rpx; */
+  font-size: 26rpx;
+}
+.followbtns {
+ background-color: #ff6398;
+ color: #ffffff;
+}
+.dian {
+  /* font-weight: bold;
+  margin-top: -10rpx;
+  margin-left: 15rpx;
+  font-size: 30rpx; */
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+}
+
+.banner image {
+  width: 100%;
+}
+
+.followcontent {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.followtitle {
+  width: 94%;
+  margin-top: 35rpx;
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+}
+.clickpackup{
+  width: 94%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+}
+.flowertxt {
+  width: 94%;
+  font-size: 30rpx;
+  margin-top: 40rpx;
+  letter-spacing: 3px;
+  /* display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; */
+}
+
+
+.followoptions {
+  width: 94%;
+  height: 70rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: yellow; */
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+.fllopleft{
+  /* background-color: red; */
+  width: 20%;
+  height: 46rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.fllopright {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+   width: 80%;
+  /* background-color: yellow; */
+}
+
+.fllopitem {
+  height: 46rpx;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 26rpx;
+  background-color: #fff;
+ padding: 0;
+ margin: 0;
+}
+.fllopitem::after{
+  border: none;
+  outline: none;
+}
+.marginsdfsdf {
+  margin-left: 30rpx;
+}
+.fllopitem text{
+/* margin-top: -5rpx; */
+}
+.teshutxt{
+  margin-top: -15rpx;
+}
+.fllopitem image {
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 10rpx;
+  z-index: 9999 !important;
+}
+
+.followcomment {
+  width: 88%;
+  height: auto;
+  padding: 20rpx;
+  background-color: #f2f2f2;
+  border-radius: 10rpx;
+}
+
+.followcommentitem {
+  letter-spacing: 3rpx;
+  /* background-color: yellow; */
+  font-size: 26rpx;
+}
+
+.titlesss {
+  font-weight: bold;
+}
+
+.fuck {
+  margin-top: 20rpx;
+  font-size: 26rpx;
+}
+
+.addcomment {
+  width: 94%;
+  height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: yellow; */
+  margin-top: 15rpx;
+}
+
+.textgrays {
+  font-size: 28rpx;
+}
+
+.addcomment image {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 15rpx;
+}
+
+.followtime {
+  width: 92%;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+.myinput {
+  /* background-color: red; */
+  width: 88%;
+  height: 70rpx;
+  z-index: 9999;
+  border-radius: 45rpx;
+  padding-left: 15rpx;
+}
+.myinputs {
+  background-color: #f2f2f2;
+  width: 87%;
+  height: 70rpx;
+  z-index: 9999;
+  border-radius: 45rpx;
+  padding-left: 25rpx;
+}

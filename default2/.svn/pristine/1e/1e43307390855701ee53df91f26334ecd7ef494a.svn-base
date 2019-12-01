@@ -1,0 +1,146 @@
+<view class='container'>
+  <view class='ordertopwrap'>
+    <view class='itemswrap'>
+      <view class='orderoptionsitem {{optselect=="listone"?"orderoptionsitems":""}}' bindtap='jumpTo' data-opt="listone">
+        <text>全部</text>
+        <view class='bottomline {{optselect=="listone"?"":"bottomlines"}}'></view>
+      </view>
+      <view class='orderoptionsitem {{optselect=="listtwo"?"orderoptionsitems":""}}' bindtap='jumpTo' data-opt="listtwo">
+        <text>待付款</text>
+        <view class='bottomline {{optselect=="listtwo"?"":"bottomlines"}}'></view>
+      </view>
+      <view class='orderoptionsitem {{optselect=="listthree"?"orderoptionsitems":""}}' bindtap='jumpTo' data-opt="listthree">
+        <text>待发货</text>
+        <view class='bottomline {{optselect=="listthree"?"":"bottomlines"}}'></view>
+      </view>
+      <view class='orderoptionsitem {{optselect=="listfour"?"orderoptionsitems":""}}' bindtap='jumpTo' data-opt="listfour">
+        <text>待收货</text>
+        <view class='bottomline {{optselect=="listfour"?"":"bottomlines"}}'></view>
+      </view>
+      <view class='orderoptionsitem {{optselect=="listfive"?"orderoptionsitems":""}}' bindtap='jumpTo' data-opt="listfive">
+        <text>已完成</text>
+        <view class='bottomline {{optselect=="listfive"?"":"bottomlines"}}'></view>
+      </view>
+    </view>
+  </view>
+  <view class='mmpwrap'>
+    <!-- 订单内容 -->
+    <view class='ordercontentswrap' wx:for='{{orderData}}' wx:key=''>
+      <!-- 顶部状态 -->
+      <view class='order_contenttop'>
+        <text>{{item.downTime}}</text>
+        <text class='colorpink' wx:if='{{item.orderStatus=="0"}}'>待付款</text>
+        <text class='colorpink' wx:if='{{item.orderStatus=="1"}}'>待发货</text>
+        <text class='colorpink' wx:if='{{item.orderStatus=="2"}}'>已发货</text>
+        <text class='colorpink' wx:if='{{item.orderStatus=="3"}}'>已完成</text>
+        <text class='colorpink' wx:if='{{item.orderStatus=="5"}}'>退款审核中</text>
+        <text class='colorpink' wx:if='{{item.orderStatus=="6"}}'>审核失败</text>
+        <text class='colorpink' wx:if='{{item.orderStatus=="7"}}'>已退款</text>
+      </view>
+      <!-- 订单内容 -->
+      <view class='order_contentswrap' bindtap='gotoordersDetail' data-id='{{item.id}}' data-ordernum='{{item.orderNum}}' wx:if='{{item.orderType!="5"}}'>
+        <view class='order_contents'>
+          <view class='ordergoodsimg'>
+            <image src='{{Furl}}{{item.faceImg}}'></image>
+          </view>
+          <view class='ordergoodscontent' >
+            <view class='ordertitles'>
+              <view class='orderxtxtxt'>{{item.goodsName}}</view>
+              <view class='textgray'>x{{item.buyCount}}</view>
+            </view>
+            <view class='ordercontenttxt textgray' wx:if='{{item.goodsType=="1"}}'>
+              <text>{{item.orderType=='0'?item.buyMonthTitle+'，':''}}{{item.orderType=='0'?item.getTimeTitle+'，':''}}{{item.orderType=='0'?item.sendWeekTypeTitle+'；':''}}{{item.addBuyTitle?'加购商品：'+item.addBuyTitle+'；':''}}{{item.giftTitle?'赠品：'+item.giftTitle+'；':''}}</text>
+            </view>
+            <view class='ordercontenttxt textgray' wx:if='{{item.goodsType=="0"}}'>
+              <text>{{item.addBuyTitle?'加购商品：'+item.addBuyTitle+'；':''}}{{item.giftTitle?'赠品：'+item.giftTitle+'；':''}}</text>
+            </view>
+          </view>         
+        </view>
+      </view>
+       <!-- 自由购订单内容 -->
+      <view class='order_contentswrap' bindtap='gotoordersDetail' data-id='{{item.id}}' data-ordernum='{{item.orderNum}}' wx:if='{{item.orderType=="5"}}' wx:for='{{item.goodsDataTemp}}' wx:key='' wx:for-item='freeItem'>
+        <view class='order_contents'>
+          <view class='ordergoodsimg'>
+            <image src='{{Furl}}{{freeItem.myImg}}'></image>
+          </view>         
+          <view class='ordergoodscontent'  >
+            <view class='ordertitles'>
+              <view class='orderxtxtxt'>{{freeItem.myName}}</view>
+              <view class='textgray'>x{{freeItem.myCount}}</view>
+            </view>
+            <view class='ordercontenttxts textgray'>
+              <text>单价：{{freeItem.myPrice}}</text>
+              <text>总价：{{freeItem.myTotalPrice}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 底部信息 -->
+      <view class='orderbottombtnwrap' bindtap='gotoordersDetail' data-id='{{item.id}}' data-ordernum='{{item.orderNum}}'>
+        <view class='orderpaymsg'>
+          <text class='msgtxt'>共{{item.buyCount+item.addBuyCount+item.giftCount}}件商品</text>
+          <text>实付：￥{{item.totalPrice}}</text>
+        </view>
+      </view>
+      <view class='part_line3'></view>
+      <!-- 底部按钮 -->
+      <!-- 待付款 -->
+      <view class='orderbottombtnwrap' wx:if='{{item.orderStatus=="0"}}'>
+        <view class='orderbottombtn'>
+          <view class='btnitemss' catchtap='closeorder' data-ordernum='{{item.orderNum}}'>取消订单</view>
+          <view class='btnitemss' catchtap='gotopay' data-ordernum='{{item.orderNum}}'>去付款</view>
+        </view>
+      </view>
+      <!-- 待发货 -->
+      <view class='orderbottombtnwrap' wx:if='{{item.orderStatus=="1"}}'>
+        <view class='orderbottombtn'>
+          <view class='btnitemss' catchtap='' wx:if='{{item.goodsType=="0"||item.orderType!=0}}' catchtap='gotoorderAddressMain' data-ordernum='{{item.orderNum}}' data-useraddress='{{item.userAddress}}' data-username='{{item.userName}}' data-userphone='{{item.userPhone}}'
+            data-userprivence='{{item.userPrivence}}'>修改地址</view>
+          <view class='btnitemss' catchtap='applyRefund' data-ordernum='{{item.orderNum}}'>申请退款</view>
+          <view class='btnitemss' catchtap='delayReceipt' data-id='{{item.id}}' wx:if='{{item.goodsType=="1"}}'>延迟收货</view>
+        </view>
+      </view>
+      <!-- 单品收货按钮-->
+      <view class='orderbottombtnwrap' wx:if='{{item.orderStatus=="2"&&item.goodsType=="0"}}'>
+        <view class='orderbottombtn'>
+          <view class='btnitemss' catchtap='gotologistics' data-ordernum='{{item.orderNum}}' data-id='{{item.id}}' data-tag='zhu'>查看物流</view>
+          <view class='btnitemss' catchtap='confirmReceipt' data-ordernum='{{item.orderNum}}'>确认收货</view>
+        </view>
+      </view>
+      <!-- 套餐收货按钮-->
+      <view class='orderbottombtnwrap' wx:if='{{item.orderStatus=="2"&&item.goodsType=="1"}}'>
+        <view class='orderbottombtn'>
+          <view class='btnitemss' catchtap='delayReceipt' data-id='{{item.id}}'>延迟收货</view>
+          <view class='btnitemss' catchtap='confirmReceipt' data-ordernum='{{item.orderNum}}'>确认收货</view>
+        </view>
+      </view>
+      <!-- 收花时间 -->
+      <view class='sendcontentwrap' wx:if='{{(item.orderStatus=="1"&&item.goodsType=="1"||item.orderStatus=="2"&&item.goodsType=="1")&&item.orderType=="0"}}'>
+        <view class='sendtitlewrap'>
+          <view class='sendtitle' catchtap='showcontent' data-id='{{item.id}}'>
+            <view wx:if='{{item.orderStatus=="2"}}'>收花详情</view>
+            <view wx:if='{{item.orderStatus=="1"}}'>修改地址</view>
+            <image src='../../images/{{item.showcontenttag?"up":"down"}}.png'></image>
+          </view>
+        </view>
+        <view class='senditemwrap' wx:if='{{item.showcontenttag}}'>
+          <view class='senditem' wx:for='{{suborderData}}' wx:for-item='subitem' wx:for-index='subindex' wx:key=''>
+            <view class='leftcontent'>
+              <view class='leftcontenttop' wx:if='{{subitem.goodsAddbuyGiftType=="0"}}'>第{{subitem.phaseNo}}期{{subitem.currentCount}}束花（{{subitem.getTimeTitle}}）</view>
+              <view class='leftcontenttop' wx:if='{{subitem.goodsAddbuyGiftType!="0"}}'>{{subitem.goodsName}}x{{subitem.currentCount}}</view>
+              <view class='leftcontentbottom textgray' wx:if='{{subitem.goodsAddbuyGiftType=="0"}}'>预计收花时间{{subitem.receiveTime}}</view>
+              <view class='leftcontentbottom textgray' wx:if='{{subitem.goodsAddbuyGiftType=="1"}}'>加购商品</view>
+              <view class='leftcontentbottom textgray' wx:if='{{subitem.goodsAddbuyGiftType=="2"}}'>赠品</view>
+            </view>
+            <view class='rightbtns'>
+              <view class='btnitem' wx:if='{{subitem.logisticsStatus=="2"||subitem.logisticsStatus=="3"||subitem.logisticsStatus=="4"}}' catchtap='gotologistics' data-ordernum='{{subitem.orderNum}}' data-tag='zi'>查看物流</view>
+              <view class='btnitem' wx:if='{{subitem.logisticsStatus=="1"}}' bindtap='gotoorderAddress' data-ordernum='{{subitem.orderNum}}' data-useraddress='{{subitem.userAddress}}' data-username='{{subitem.userName}}' data-userphone='{{subitem.userPhone}}' data-userprivence='{{subitem.userPrivence}}'>修改地址</view>
+            </view>
+          </view>
+
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>

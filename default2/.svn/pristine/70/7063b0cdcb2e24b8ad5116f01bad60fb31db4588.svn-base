@@ -1,0 +1,106 @@
+<view class='container'>
+  <view class='sadfawrap'>
+    <view class='address' bindtap='gotoaddAddress'>
+      <view class='addleft'>
+        <image src='../../images/mall/dingwei.png'></image>
+        <view class='addtxt'>
+          <text>{{addressData.userPrivenceNew}}{{addressData.address}}</text>
+          <view class='contact'>
+            <text>{{addressData.userName}}</text>
+            <text>{{addressData.phone}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='addright'>
+        <view wx:if='{{!hasAddress}}'>添加地址</view>
+        <image src='../../images/mall/goto.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='quanwrap' wx:if='{{hascoupon}}'>
+    <view class='quan' bindtap='gotominecard'>
+      <view>
+        <text class='quantitle'>领券</text>
+        <text class='quanprice'>{{couponData.title}}</text>
+      </view>
+      <view class='quanright'>
+        <image src='../../images/mall/goto.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='goodslist'>
+    <!-- 商品 -->
+    <view class='goodsitem'>
+      <view class='itemleft'>
+        <image src='{{Furl}}{{goodsData.topimgs[0]}}'></image>
+      </view>
+      <view class='itemright'>
+        <view class='rightone'>
+          <text>{{goodsData.goodsName}}</text>
+          <text>￥{{price}}</text>
+        </view>
+        <view class='righttwo textgray'>{{chooseProduct.attrOptionalName}}</view>
+        <view class='rightthree textgray'>x{{count}}</view>
+      </view>
+    </view>
+    <!-- 加购商品 -->
+    <view class='goodsitem' wx:for='{{jiagougoodsData}}' wx:key=''>
+      <view class='itemleft'>
+        <image src='{{Furl}}{{item.image}}'></image>
+      </view>
+      <view class='itemright'>
+        <view class='rightone'>
+          <text>{{item.name}}</text>
+          <text>￥{{item.currentPrice}}</text>
+        </view>
+        <view class='righttwo textgray'>{{item.name}}</view>
+        <view class='rightthree textgray'>x1</view>
+      </view>
+    </view>
+    <!--赠送商品 -->
+    <view class='goodsitem' wx:for='{{zengsonggoodsData}}' wx:key=''>
+      <view class='itemleft'>
+        <image src='{{Furl}}{{item.image}}'></image>
+      </view>
+      <view class='itemright'>
+        <view class='rightone'>
+          <text>{{item.name}}</text>
+          <text class='dandu textgray'>赠品</text>
+        </view>
+        <view class='righttwo textgray'>{{item.name}}</view>
+        <view class='rightthree textgray'>x1</view>
+      </view>
+    </view>
+  </view>
+  <view class='totalwrap'>
+    <view class='total'>
+      <text>共</text>
+      <text class='totalnum'>{{count+jiacount+zengcount}}</text>
+      <text>件商品，总计</text>
+      <text class='totalprice'>￥{{totalPrice}}，</text>
+      <text>抵扣{{couponprice}}，实付</text>
+      <text class='totalprice'>￥{{trueprice}}</text>
+    </view>
+  </view>
+  <view class='selectagreementwrap'>
+    <view class='selectagreement'>
+      <view class='agreementtext' bindtap='showagreement'>
+        同意
+        <text class='lanse'>《花作伴商城用户协议》</text>，已知晓商品详情页提示信息
+      </view>
+      <radio-group class="radio-group" bindtap="radioChange">
+        <label class="radio">
+          <radio value="" checked="{{isSelected}}" />
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <view class='topay'>
+    <view class='topayleft'>
+      <text class='paytxt1'>应付金额</text>
+      <text class='paytxt2'>￥{{trueprice}}</text>
+    </view>
+    <view class='topayright' bindtap='downOrder'>去支付</view>
+  </view>
+</view>
+<agreement showModal="{{showModal}}"></agreement>

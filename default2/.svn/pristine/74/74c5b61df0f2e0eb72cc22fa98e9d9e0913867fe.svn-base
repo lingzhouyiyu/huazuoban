@@ -1,0 +1,85 @@
+page{
+  background-color: #fafafa;
+}
+.changeitemwrap{
+  width:100%;
+  background-color: #ffffff;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30rpx 0;
+  /* background-color: yellow; */
+  margin-bottom: 15rpx;
+}
+.changeitem{
+  width:94%;
+  height: 100rpx;
+  /* background-color: red;   */
+  display: flex;
+}
+.itemleft{
+  width: 20%;
+  height: 100%;
+  /* background-color: gray; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.itemleft image{
+width: 100rpx;
+height: 100rpx;
+border-radius: 50%;
+border: 3rpx solid #ff4081;
+}
+.destxt{
+  color: #ffffff;
+  border: 3rpx solid #ffffff;
+  border-radius: 30rpx;
+  position: absolute;
+  top:-5rpx;
+  left: 10rpx;
+  z-index: 9999;
+  background-color: #ff4081;
+  font-size: 24rpx;
+  padding: 0 5rpx;
+}
+.itemright{
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.righttop{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rightbottom{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+}
+.float{
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 150rpx;
+  right: 30rpx;
+  background-color: #ff4081;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #fff; */
+}
+.floatimg{
+  width: 75rpx;
+  height: 75rpx;
+}

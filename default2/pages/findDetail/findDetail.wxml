@@ -1,0 +1,128 @@
+<!-- 发现详情 -->
+<view class='fuckerwrap'>
+  <view class='followwrap'>
+    <view class='followtop'>
+      <view class='followtopleft' bindtap='gotominecenter' data-openid='{{contentSigle.openId}}' data-avatarurl='{{contentSigle.nickImages}}' data-nickname='{{contentSigle.nickName}}'>
+        <image src='{{contentSigle.nickImages}}'></image>
+        <text>{{contentSigle.nickName}}</text>
+      </view>
+      <view class='followtopright' bindtap='articleFollow' data-id='{{contentSigle.id}}' data-openid='{{contentSigle.openId}}'  wx:if='{{contentSigle.openId!=openId}}'>
+        <text class='followbtn colorpinks {{contentSigle.hasFollow=="0"?"":"followbtns"}}'>{{contentSigle.hasFollow=="0"?"关注":"已关注"}}</text>
+        <!-- <image class='dian' src='../../images/find/sharedian.png'></image> -->
+        <!-- <text class='dian'>...</text> -->
+      </view>
+    </view>
+    <!-- 轮播图 -->
+    <swiper class="banner" autoplay="false" indicator-dots='true'  style='height:{{windowWidth}}px;'>
+      <block wx:for="{{contentSigle.talkImages}}" wx:key="">
+        <swiper-item>
+          <image src="{{Furl}}{{item.url}}" style='width:100%;height:100%;' mode='aspectFill' bindload='imgHeight' />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='followcontent'>
+      <!-- <view class='followtitle'>每周一花，轻松好心情</view> -->
+      <view class='flowertxt' bindtap='topclickpackup'>{{contentSigle.islong?contentSigle.talkContentNew:contentSigle.talkContent}}</view>
+      <view class='clickpackup' bindtap='topclickpackup' wx:if='{{contentSigle.isShow}}'>{{contentSigle.islong?"展开":"收起"}}</view>
+    </view>
+    <view class='followoptions'>
+      <view class='fllopleft'>
+        <button class='fllopitem' open-type='share' bindtap='getshareid' data-id='{{contentSigle.id}}'>
+          <image src='../../images/find/zhuan.png'></image>
+          <text class='teshutxt'>{{contentSigle.shareCount}}</text>
+        </button>
+      </view>
+      <view class='fllopright'>
+        <view class='fllopitem' bindtap='zanclick'>
+          <image src='../../images/find/{{contentSigle.iszan?"shoulight":"shou"}}.png'></image>
+          <text>{{contentSigle.praiseCount}}</text>
+        </view>
+        <view class='fllopitem marginsdfsdf' bindtap='shouclick' data-id='{{contentSigle.id}}'>
+          <image src='../../images/find/{{contentSigle.isshou?"shouslight":"shous"}}.png'></image>
+          <text>{{contentSigle.collectCount}}</text>
+        </view>
+        <view class='fllopitem marginsdfsdf' bindtap='gotocommentDetail' data-id='{{contentSigle.id}}'>
+          <image src='../../images/find/ping.png'></image>
+          <text>{{contentSigle.commentCount}}</text>
+        </view>
+      </view>
+    </view>
+     <!-- wx:if='{{contentSigle.commentCount>0}}' -->
+    <view class='followcomment' bindtap='gotocommentDetail' data-id='{{contentSigle.id}}' wx:if='{{contentSigle.commentCount>0}}'>
+      <view class='followcommentitem' wx:for='{{contentSigle.comments}}' wx:key='' wx:for-item='commentitem'>
+        <text class='titlesss'>{{commentitem.nickName}}：</text> {{commentitem.replyContent}}
+      </view>     
+      <view class='textgray fuck'>查看{{contentSigle.commentCount}}条评论</view>
+    </view>
+    <view class='addcomment'>
+      <image src='../../images/find/header.png'></image>
+      <!-- <text class='textgray'>添加评论...</text> -->
+      <input type='text' confirm-type='send' focus='{{myfocus}}' bindfocus='getfocus' bindblur='losefocus'  bindconfirm='addSaveComment' confirm-type='send' placeholder='添加评论...' placeholder-class='textgrays textgray' class='{{hasfocus?"myinputs":"myinput"}}' data-id='{{contentSigle.id}}' data-tag='single' value='{{inputValue}}'></input>
+    </view>
+    <view class='followtime textgray'>{{contentSigle.createTime}}</view>
+    <view class='part_line20'></view>
+  </view>
+  <view class='followwrap' wx:for='{{contentList}}' wx:key=''>
+    <view class='followtop'>
+      <view class='followtopleft' bindtap='gotominecenter' data-openid='{{item.openId}}' data-avatarurl='{{item.nickImages}}' data-nickname='{{item.nickName}}'>
+        <image src='{{item.nickImages}}'></image>
+        <text>{{item.nickName}}</text>
+      </view>
+      <view class='followtopright' bindtap='otherarticleFollow' data-id='{{item.id}}' data-openid='{{item.openId}}' wx:if='{{item.openId!=openId}}'>
+        <text class='followbtn colorpinks {{item.hasFollow=="0"?"":"followbtns"}}'>{{item.hasFollow=="0"?"关注":"已关注"}}</text>
+        <!-- <image class='dian' src='../../images/find/sharedian.png'></image> -->
+        <!-- <text class='dian'>...</text> -->
+      </view>
+    </view>
+    <!-- 轮播图 -->
+    <swiper class="banner" autoplay="false" indicator-dots='true'  style='height:{{windowWidth}}px;'>
+      <block wx:for="{{item.talkImages}}" wx:key="" wx:for-item='items'>
+        <swiper-item>
+          <image src="{{Furl}}{{items.url}}" style='width:100%;height:100%;' mode='aspectFit' bindload='imgHeight' />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='followcontent'>
+      <!-- <view class='followtitle'>每周一花，轻松好心情</view> -->
+      <view class='flowertxt' bindtap='clickpackup' data-id='{{item.id}}'>{{item.islong?item.talkContentNew:item.talkContent}}</view>
+      <view class='clickpackup' bindtap='clickpackup' data-id='{{item.id}}' wx:if='{{item.isShow}}'>{{item.islong?"展开":"收起"}}</view>
+    </view>
+    <view class='followoptions'>
+      <view class='fllopleft'>
+        <button class='fllopitem' open-type='share' bindtap='getshareid' data-id='{{item.id}}'>
+          <image src='../../images/find/zhuan.png'></image>
+          <text class='teshutxt'>{{item.shareCount}}</text>
+        </button>
+      </view>
+      <view class='fllopright'>
+        <view class='fllopitem' bindtap='otherzanclick' data-id='{{item.id}}'>
+          <image src='../../images/find/{{item.iszan?"shoulight":"shou"}}.png'></image>
+          <text>{{item.praiseCount}}</text>
+        </view>
+        <view class='fllopitem marginsdfsdf' bindtap='othershouclick' data-id='{{item.id}}'>
+          <image src='../../images/find/{{item.isshou?"shouslight":"shous"}}.png'></image>
+          <text>{{item.collectCount}}</text>
+        </view>
+        <view class='fllopitem marginsdfsdf' bindtap='gotocommentDetail' data-id='{{item.id}}'>
+          <image src='../../images/find/ping.png'></image>
+          <text>{{item.commentCount}}</text>
+        </view>
+      </view>
+    </view>
+      <!-- wx:if='{{contentSigle.commentCount>0}}' -->
+    <view class='followcomment' bindtap='gotocommentDetail' data-id='{{item.id}}' wx:if='{{item.commentCount>0}}'>
+      <view class='followcommentitem' wx:for='{{item.comments}}' wx:key='' wx:for-item='singleitem'>
+        <text class='titlesss'>{{singleitem.nickName}}：</text> {{singleitem.replyContent}}
+      </view>     
+      <view class='textgray fuck'>查看{{item.commentCount}}条评论</view>
+    </view>
+    <view class='addcomment'>
+      <image src='../../images/find/header.png'></image>
+      <!-- <text class='textgray'>添加评论...</text> -->
+      <input type='text' focus='{{myfocus}}' bindfocus='getfocus' bindblur='losefocus' bindconfirm='addSaveComment' data-id='{{item.id}}' confirm-type='send' placeholder='添加评论...' placeholder-class='textgrays textgray' class='{{hasfocus?"myinputs":"myinput"}}' value='{{inputValue}}'  data-tag='group'></input>
+    </view>
+    <view class='followtime textgray'>{{item.createTime}}</view>
+    <view class='part_line20'></view>
+  </view>
+</view>
+<protocol showModal="{{showModal}}"></protocol>

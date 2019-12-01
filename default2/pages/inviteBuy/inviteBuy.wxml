@@ -1,0 +1,5 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='container'>
+ <template is="wxParse" data="{{wxParseData:activeDetail.nodes}}" />
+  <view class='gotobuy' bindtap='gotomall'>去商城购买</view>
+</view>

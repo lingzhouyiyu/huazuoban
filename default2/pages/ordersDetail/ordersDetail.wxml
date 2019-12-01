@@ -1,0 +1,92 @@
+<view class='container'>
+
+  <view class='wraps'>
+    <view class='addresswrap'>
+      <image src='../../images/mine/gai.png'></image>
+      <view class='txtxtxtxt'>
+        <text>{{orderDetailData.userPrivence}}{{orderDetailData.userAddress}}</text>
+        <text>{{orderDetailData.userName}}{{orderDetailData.userPhone}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='part_line15'></view>
+  <view class='wraps'>
+    <view class='goodsmessage'>
+      <view class='titles'>商品信息</view>
+      <!-- 其他商品 -->
+      <view class='messageitem' wx:if='{{orderDetailData.orderType!="5"}}'>
+        <view class='itemsleft'>
+          <image src='{{Furl}}{{orderDetailData.faceImg}}'></image>
+        </view>
+        <view class='itemsright'>
+          <view class='nameitem'>
+            <text>{{orderDetailData.goodsName}}</text>
+            <text>￥{{orderDetailData.goodsPrice}}</text>
+          </view>
+          <view class='nameitems textgray'>
+            <text class='mymessage' wx:if='{{orderDetailData.goodsType=="1"}}'>{{orderDetailData.orderType=='0'?orderDetailData.buyMonthTitle+'，':''}}{{orderDetailData.orderType=='0'?orderDetailData.getTimeTitle+'，':''}}{{orderDetailData.orderType=='0'?orderDetailData.sendWeekTypeTitle+'；':''}}{{orderDetailData.addBuyTitle?'加购商品：'+orderDetailData.addBuyTitle+'；':''}}{{orderDetailData.giftTitle?'赠品：'+orderDetailData.giftTitle+'；':''}}</text>
+
+            <text class='mymessage' wx:if='{{orderDetailData.goodsType=="0"}}'>{{orderDetailData.addBuyTitle?'加购商品：'+orderDetailData.addBuyTitle+'；':''}}{{orderDetailData.giftTitle?'赠品：'+orderDetailData.giftTitle+'；':''}}</text>
+            <text>x{{orderDetailData.buyCount}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- 自由购商品 -->
+      <view class='messageitem' wx:if='{{orderDetailData.orderType=="5"}}' wx:for='{{orderDetailData.goodsDataTemp}}' wx:key='' wx:for-item='freeItem'>
+        <view class='itemsleft'>
+          <image src='{{Furl}}{{freeItem.myImg}}'></image>
+        </view>
+        <view class='itemsright'>
+          <view class='nameitem'>
+            <text>{{freeItem.myName}}</text>
+            <text>￥{{freeItem.myPrice}}</text>
+          </view>
+          <view class='nameitems textgray'>
+            <text>x{{freeItem.myCount}}</text>
+            <text>总价：{{freeItem.myTotalPrice}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='optionsitems'>
+        <text class='textgray'>小计：</text>
+        <text>￥{{orderDetailData.totalPrice}}</text>
+      </view>
+      <!-- <view class='optionsitems'>
+        <text class='textgray'>运费：</text>
+        <text>￥0.00</text>
+      </view> -->
+      <view class='optionsitems'>
+        <text class='textgray'>优惠/抵扣：</text>
+        <text>-￥{{orderDetailData.couponPrice}}</text>
+      </view>
+      <view class='optionsitems'>
+        <text class='textgray'>实付：</text>
+        <text>￥{{orderDetailData.realPrice}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='part_line15'></view>
+  <view class='wraps'>
+    <view class='bottomwrap'>
+      <view class='optionsitems'>
+        <text class='textgray'>订单编号：</text>
+        <text>{{orderDetailData.orderNum}}</text>
+      </view>
+      <view class='optionsitems'>
+        <text class='textgray'>下单时间：</text>
+        <text>{{orderDetailData.downTime}}</text>
+      </view>
+      <view class='optionsitems'>
+        <text class='textgray'>支付方式：</text>
+        <text>微信支付</text>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='bottoptions'>
+    <view class='bottleft'>
+      <text class='botttxtxt'>应付金额</text>
+      <text class='colorpinks sadfasdfa'>￥24.9</text>
+    </view> 
+    <view class='bottright backcolorpinks'>再次购买</view>
+  </view>-->
+</view>

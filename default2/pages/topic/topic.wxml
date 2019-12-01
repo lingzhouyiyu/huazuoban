@@ -1,0 +1,23 @@
+<view class='container'>
+  <view class='findtop'>
+    <view class='search'>
+      <image class='searchimg' src='../../images/find/inputleft.png'></image>
+      <input type='text' confirm-type='search' bindinput='searchSchool' bindconfirm='searchSchool' bindfocus='searchSchool' class='searchinput' placeholder="请输入要搜索的内容~" placeholder-class='placeholderclass' cursor-spacing="15"></input>
+    </view>
+  </view>
+  <view class='wrap'>
+    <view class='hottag'>
+      <image src='../../images/huo.png'></image>
+      <text>热门标签</text>
+    </view>
+  </view>
+  <view class='wraps' wx:for='{{topicData}}' wx:key=''>
+    <view class='topicitem'  bindtap='gettopic' data-text='{{item.categoryName}}'  data-id='{{item.danceCategoryId}}'>
+      <image src='../../images/qian.png'></image>
+      <view class='itemtxt'>
+      <text class='boldtxt'>{{item.categoryName}}</text>
+      <text class='textgray'>25.6万浏览</text>
+      </view>
+    </view>
+  </view>
+</view>

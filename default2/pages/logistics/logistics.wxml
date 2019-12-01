@@ -1,0 +1,49 @@
+<view class='container'>
+
+  <view class='wraps'>
+    <view class='goodsmessage'>
+      <view class='titles'>商品信息</view>
+      <view class='messageitem'>
+        <view class='itemsleft'>
+          <image src='{{Furl}}{{orderDetailData.faceImg}}'></image>
+        </view>
+        <view class='itemsright'>
+          <view class='nameitem'>
+            <text>{{orderDetailData.goodsName}}</text>
+            <text>￥{{orderDetailData.goodsPrice}}</text>
+          </view>
+          <view class='nameitems textgray'>
+            <text class='mymessage' wx:if='{{orderDetailData.goodsType=="1"}}'>{{orderDetailData.orderType=='0'?orderDetailData.buyMonthTitle+'，':''}}{{orderDetailData.orderType=='0'?orderDetailData.getTimeTitle+'，':''}}{{orderDetailData.orderType=='0'?orderDetailData.sendWeekTypeTitle+'；':''}}{{orderDetailData.addBuyTitle?'加购商品：'+orderDetailData.addBuyTitle+'；':''}}{{orderDetailData.giftTitle?'赠品：'+orderDetailData.giftTitle+'；':''}}</text>
+
+            <text class='mymessage' wx:if='{{orderDetailData.goodsType=="0"}}'>{{orderDetailData.addBuyTitle?'加购商品：'+orderDetailData.addBuyTitle+'；':''}}{{orderDetailData.giftTitle?'赠品：'+orderDetailData.giftTitle+'；':''}}</text>
+            <text>x1</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='part_line15'></view>
+  <view class='yundanhaowrap'>
+    <view class='yundanhao'>
+      <view class='dantitle'>{{wuliuName}}</view>
+      <view class='danbottom'>
+        <text class='textgray'>运单编号：{{mailNum}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='part_line15'></view>
+  <view class='wuliuwrap'>
+    <view class='wuliu' wx:for='{{wuliu}}' wx:key=''>
+      <view class='wuliuleft'>
+        <image src='../../images/{{item.isLast?"dots":"dot"}}.png' class='{{item.isLast?"wuliuimg":"wuliuimgs"}}'></image>
+      </view>
+      <view class='wuliuright'>
+        <view class='wuliutitle'>{{item.AcceptStation}}</view>
+        <view class='wuliutime'>{{item.AcceptTime}}</view>
+      </view>
+    </view>
+   
+  </view>
+
+
+</view>

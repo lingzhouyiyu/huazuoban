@@ -1,0 +1,30 @@
+<view class='container'>
+  <textarea class='addcontent' placeholder='这一刻，我想说...' placeholder-class='placeholder' value='{{textvalue}}' bindconfirm='gettalkContent' bindblur='gettalkContent'></textarea>
+  <view class='addtip' wx:if='{{!hastopic}}'>
+    <view class='tipbtn backcolorgray' bindtap='gototopic'>#添加话题</view>
+  </view>
+  <view class='topicwrap' wx:if='{{hastopic}}'>
+    <view class='topicbtn' wx:for='{{topicData}}' wx:key='' bindtap='closetopicimg' data-text='{{item.text}}'>
+      <view class='topicoption'>#{{item.text}}</view>
+      <view class='imgcolsebtn'>
+        <image src='../../images/topicclose.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='uploadwrap'>
+    <view class='uploadview'>
+      <view class='imageview' wx:for='{{mmp}}' wx:key='unique'>
+        <view class='subBtn' bindtap='subImg' data-numbers="{{index}}">
+          <image src='../../images/topicimgclose.png'></image>
+        </view>
+        <image src='{{item.url}}'></image>
+      </view>
+      <view class='uploadBtn {{isShow?"true":"hideTrue"}}' bindtap='selectimg'>
+        <image src='../../images/photo.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='fabubtn backcolorpinks' bindtap='gotofindDetail'>发布</view>
+</view>
+<protocol showModal="{{showModal}}"></protocol>
+

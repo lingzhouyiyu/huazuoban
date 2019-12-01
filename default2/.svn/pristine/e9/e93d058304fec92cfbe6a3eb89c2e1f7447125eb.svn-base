@@ -1,0 +1,5 @@
+<import src="../../wxParse/wxParse.wxml" />
+<!-- 图文详情 -->
+  <view class='container'>
+    <template is="wxParse" data="{{wxParseData:activeDetail.nodes}}" />
+  </view>

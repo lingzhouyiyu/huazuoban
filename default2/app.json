@@ -1,0 +1,110 @@
+{
+  "pages": [
+    "pages/mall/mall",
+    "pages/freePurchase/freePurchase",
+    "pages/huiyuan/huiyuan",
+    "pages/add/add",
+    "pages/mine/mine",
+    "pages/inviteBuy/inviteBuy",
+    "pages/addAddress/addAddress",
+    "pages/find/find",
+    "pages/growing/growing",
+    "pages/mineservice/mineservice",
+    "pages/inviteGroup/inviteGroup",
+    "pages/companycollect/companycollect",
+    "pages/mineCenter/mineCenter",
+    "pages/confirmOrder/confirmOrder",
+    "pages/confirmOrdertuan/confirmOrdertuan",
+    "pages/confirmOrderalonetuan/confirmOrderalonetuan",
+    "pages/confirmOrderalonepoint/confirmOrderalonepoint",
+    "pages/confirmOrderalone/confirmOrderalone",
+    "pages/minepoints/minepoints",
+    "pages/refund/refund",
+    "pages/logistics/logistics",
+    "pages/mineChallenge/mineChallenge",
+    "pages/changeList/changeList",
+    "pages/minesignin/minesignin",
+    "pages/servicecontact/servicecontact",
+    "pages/orders/orders",
+    "pages/goodsDetail/goodsDetail",
+    "pages/createGroup/createGroup",
+    "pages/mineaddress/mineaddress",
+    "pages/topic/topic",
+    "pages/findDetail/findDetail",
+    "pages/userAuth/userAuth",
+    "pages/activeChallenge/activeChallenge",
+    "pages/commentDetai/commentDetai",
+    "pages/goodsDetails/goodsDetails",
+    "pages/ordersrepay/ordersrepay",
+    "pages/growingflowers/growingflowers",
+    "pages/servicefeedback/servicefeedback",
+    "pages/guanzhu/guanzhu",
+    "pages/zan/zan",
+    "pages/minecode/minecode",
+    "pages/minecard/minecard",
+    "pages/minemessage/minemessage",
+    "pages/mineCollect/mineCollect",
+    "pages/growingDetail/growingDetail",
+    "pages/goodsDetailalone/goodsDetailalone",
+    "pages/editAddress/editAddress",
+    "pages/selectAddress/selectAddress",
+    "pages/goodsCoupon/goodsCoupon",
+    "pages/activeNomal/activeNomal",
+    "pages/goodsDetailstao/goodsDetailstao",
+    "pages/ordersDetail/ordersDetail",
+    "pages/mineLook/mineLook",
+    "pages/orderAddress/orderAddress",
+    "pages/mineChallengemany/mineChallengemany",
+    "pages/goodsDetailalonepoint/goodsDetailalonepoint",
+    "pages/orderAddressMain/orderAddressMain",
+    "pages/confirmOrderFree/confirmOrderFree",
+    "pages/minecodeNew/minecodeNew",
+    "pages/test/test"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "FLOWERSHIP花作伴",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#757576",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "selectedColor": "#FF4081",
+    "list": [
+      {
+        "pagePath": "pages/find/find",
+        "iconPath": "images/tabbar/find.png",
+        "selectedIconPath": "images/tabbar/findlight.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/mall/mall",
+        "iconPath": "images/tabbar/mall.png",
+        "selectedIconPath": "images/tabbar/malllight.png",
+        "text": "商城"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "iconPath": "images/tabbar/add.png",
+        "selectedIconPath": "images/tabbar/addlight.png",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/growing/growing",
+        "iconPath": "images/tabbar/growing.png",
+        "selectedIconPath": "images/tabbar/growinglight.png",
+        "text": "养护"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/tabbar/mine.png",
+        "selectedIconPath": "images/tabbar/minelight.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

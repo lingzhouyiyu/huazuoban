@@ -1,0 +1,267 @@
+
+page{
+  background-color: #f2f2f2;
+}
+.container{
+  padding-bottom: 300rpx;
+}
+.ordertopwrap{
+  width: 100%;
+  height: 92rpx;
+  background-color: #fff;
+  border-top: 2rpx solid #f2f2f2;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.itemswrap{
+  width: 96%;
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.mmpwrap{
+  width: 100%;
+  height: auto;
+  margin-top: 92rpx;
+}
+.orderoptionsitem{
+/* background-color: green; */
+margin-left: 30rpx;
+width: 18%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+
+color: #888;
+}
+.orderoptionsitems{
+/* background-color: green; */
+margin-left: 30rpx;
+width: 18%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+font-weight: bold;
+color: #ff4081;
+}
+.bottomline {
+  width: 75%;
+  height: 5rpx;
+  margin-top: 23rpx;
+  background-color: #ff4081;
+}
+
+.bottomlines {
+  width: 75%;
+  height: 5rpx;
+   margin-top: 23rpx;
+  background-color: #fff;
+}
+/* 订单样式 */
+.ordercontentswrap{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+.order_contenttop{
+  width: 92%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  background-color: #fff;
+}
+.order_contentswrap{
+  width: 100%;
+  /* background-color: #f2f2f2; */
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30rpx 0;
+}
+.order_contents{
+  width: 92%;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.ordergoodsimg{
+  width: 22%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.ordergoodsimg image{
+width: 130rpx;
+height: 130rpx;
+}
+.ordergoodscontent{
+  width: 78%;
+ 
+}
+.ordertitles{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.orderxtxtxt{
+  width: 85%;
+ 
+  font-size: 30rpx;
+}
+.ordercontenttxt{
+  width: 85%;
+ margin-top:10rpx;
+  font-size: 26rpx;
+}
+.ordercontenttxts{
+  width: 85%;
+ margin-top:10rpx;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items:flex-start;
+}
+.orderpaymsg{
+  width: 92%;
+  height: 70rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+background-color: #fff;
+}
+
+.msgtxt{
+  margin-right: 10rpx;
+}
+.orderbottombtnwrap{
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.orderbottombtn{
+  width: 92%;
+  height: 100rpx;
+ 
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+.btnitemss{
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #f2f2f2;
+  margin-left: 30rpx;
+  font-size: 24rpx;
+  /* background-color: red; */
+}
+.btnitemsss{
+  padding: 5rpx 20rpx;
+  border-radius: 10rpx;
+  border: 2rpx solid #FB8DB2;
+  margin-left: 20rpx;
+  font-size: 24rpx;
+  color: #FB8DB2;
+}
+/* //收花时间样式 */
+.sendcontentwrap{
+  width: 100%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+}
+.sendtitlewrap{
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    border-top: 2rpx solid #f2f2f2;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+.sendtitle{
+width: 94%;
+height: 70rpx;
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}
+.sendtitle image{
+  width: 30rpx;
+  height: 30rpx;
+}
+.senditemwrap{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #ffffff;
+}
+.senditem{
+  width: 94%;
+  height: 80rpx;
+  /* background-color: yellow; */
+  border-bottom: 2rpx solid #f2f2f2;
+  padding: 35rpx 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.leftcontent{
+  height: 100%;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.leftcontenttop{
+font-size: 28rpx;
+}
+.leftcontentbottom{
+  font-size: 24rpx;
+}
+.rightbtns{
+  display: flex;
+}
+.btnitem{
+  border: 2rpx solid #f2f2f2;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  padding: 5rpx 15rpx;
+  margin-left: 15rpx;
+}
+.btnitems{
+  border: 2rpx solid #ff4081;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  padding: 5rpx 15rpx;
+  margin-left: 15rpx;
+  color: #ff4081;
+}

@@ -1,0 +1,223 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='container'>
+  <!-- <image src='../../images/mall/banner.jpg' style='width:{{windowWidth}}px;height:{{windowWidth}}px'></image> -->
+  <!-- 轮播图 -->
+  <swiper class="banner" autoplay="true" indicator-dots='true' circular='true' interval="5000" duration="1000" style='height:{{windowWidth}}px;width:{{windowWidth}}px'>
+    <block wx:for="{{goodsData.topimgs}}" wx:key="" wx:for-item='itembanner'>
+      <swiper-item>
+        <image src="{{Furl}}{{itembanner}}" style='width:100%;height:100%' />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='flowertitle'>{{goodsData.goodsName}}</view>
+  <view class='describe'>{{goodsData.goodsIntroduce?goodsData.goodsIntroduce:""}}</view>
+  <view class='priceoptions'>
+    <text class='newprices'>￥</text>
+    <text class='newprice'>{{productPrice}}</text>
+    <text class='oldprice'>原价￥{{oldPrice}}</text>
+  </view>
+  <view class='tipoptionswrap'>
+    <view class='tipoptions'>
+      <view class='optionsitem'>
+        <image src='../../images/mall/chandi.png'></image>
+        <text>产地直采</text>
+      </view>
+      <view class='optionsitem'>
+        <image src='../../images/mall/chandi.png'></image>
+        <text>花损赔付</text>
+      </view>
+      <view class='optionsitem'>
+        <image src='../../images/mall/chandi.png'></image>
+        <text>准时送达</text>
+      </view>
+    </view>
+  </view>
+
+  <view class='part_line20'></view>
+  <view class='ponitswrap'>
+    <view class='points'>
+    <text class='pointstitle'>抵扣</text>
+    <text class='pointscotent'>可用{{goodsData.points}}积分加{{productPrice}}元购买</text>
+    </view>
+  </view>
+  <!-- 促销 -->
+  <view class='sales' wx:if='{{goodsData.buyAddIntroduce||goodsData.giftIntroduce}}'>
+    <view class='salestitle'>促销</view>
+    <view class='salesdetail'>
+      <view class='salesitem' wx:if='{{goodsData.giftIntroduce}}'>
+        <view class='salesitemleft'>
+          <text class='salesbtn'>赠送</text>
+        </view>
+        <view class='salesitemright'>
+          <text>{{goodsData.giftIntroduce}}</text>
+        </view>
+      </view>
+      <view class='salesitem' wx:if='{{goodsData.buyAddIntroduce}}'>
+        <view class='salesitemleft'>
+          <text class='salesbtn'>加购</text>
+        </view>
+        <view class='salesitemright'>
+          <text>{{goodsData.buyAddIntroduce}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 图文详情 -->
+  <view class='details'  bindtap='gotomalls'>
+    <template is="wxParse" data="{{wxParseData:goodsDetail.nodes}}" />
+  </view>
+  <view class='declaration'>
+    <view class='sdfasdtop'>
+      <view class='declarationtop' bindtap='dakaimian'>
+        <text>服务免责声明</text>
+        <image src='../../images/{{isdisplay?"reduce":"add"}}.png'></image>
+      </view>
+    </view>
+    <view class='mianzecontentwrap' wx:if='{{isdisplay}}'>
+      <view class='mianzecontent'> <view class='mianzeitem' style='margin-bottom:30rpx;'>
+          致花作伴的蜜儿们：
+        </view>
+         <view class='mianzeitem suojin'>
+          花作伴鲜花订阅平台将竭诚为您提供优质的鲜花订阅服务，但在服务过程中，难免会有不可抗力因素，导致服务中发生中断、延期。依照《中华人民共和国合同法》的相关规定，不可抗力是指不能预见、不能克服并不能避免且对一方或双方造成重大影响的客观事件。
+        </view>
+         <view class='mianzeitem suojin'>
+          在花作伴平台，不可抗力因素一般包括但不限于对鲜花质量、物流（航班延误、取消、交通管制等）造成重大影响的以下事件：
+        </view>
+         <view class='mianzeitem'>
+          a . 自然灾害（包括特殊的极端天气，雾霾、暴雨、大雪等）；
+        </view>
+         <view class='mianzeitem'>
+          b . 社会事件（如战争、动乱等）；
+        </view>
+         <view class='mianzeitem'>
+          c . 政府行为等。
+        </view>
+         <view class='mianzeitem'>
+          如因不可抗因素导致服务中断、停发、延迟等情况时，花作伴将在第一时间与您沟通（请您确保平台留存联系方式保持畅通），协商并及时进行调整、套餐变更、退款（双方协商后选择一种处理方式）。但是由此给您造成的损失、花作伴在法律允许的范围内全部或部分免责。
+        </view>
+         <view class='mianzeitem'>
+          d . 国定节假日等特殊节日（如春节、劳动节、国庆、端午等）暂停或者顺延，我们会提前告知。
+        </view>
+         <view class='mianzeitem'>
+          因个人体质不同，部分人群对花粉有过敏现象，请您结合自身及收货方的具体情况进行订购，花作伴对此情况在法律允许的法维内免责。
+        </view>
+          <view class='mianzeitem'>
+          请您详细阅读上述声明，点击订阅视为对上述内容已知悉，感谢您对花作伴的理解与支持。
+        </view></view>
+    </view>
+    <!-- <image src='../../images/logo.png' class='wqerq'></image>
+    <view class='asdfdseea textgray'>
+      <text>幸有花作伴·不负好时光</text>
+    </view>
+    <view class='declarationpart'></view>
+    <view class='declarationtips'>温馨提示：鲜花过敏人群请谨慎购买</view> -->
+  </view>
+  <!-- 底部按钮 -->
+  <view class='bottomBtn'>
+    <view class='icon' bindtap='gotomall'>
+      <image src='../../images/mall/fang.png'></image>
+    </view>
+    <view class='collect' bindtap='doCollect'>
+      <image src='../../images/{{isCollection?"collects":"collect"}}.png' class='collectimg'></image>
+      <text class='{{isCollection?"colorpinks":""}}'>{{isCollection?"已收藏":"收藏"}}</text>
+    </view>
+    <view class='order' bindtap='buynow'>立即购买</view>
+    <!-- <view class='buys' bindtap='buynow'>49元3人团</view> -->
+  </view>
+  <!-- 立即购买弹框 -->
+  <view class='getVoucher_cover  {{hidetag?"hideview":"showview"}}' catchtap='hidebuynow' catchtouchmove="myCatchTouch"></view>
+  <view class='scroll_warp {{hidetag?"hideview":"showview"}}' catchtouchmove="myCatchTouch">
+    <view class='basemessage'>
+      <image class='goodsimg' src='{{Furl}}{{goodsData.topimgs[0]}}'></image>
+      <view class='topoption colorpinks'>
+        <text>￥{{productPrice*buyCount+jiaprice}}</text>
+        <image src='../../images/mall/close.png' catchtap='hidebuynow'></image>
+      </view>
+      <view class='selectedoptions'>已选：{{selectproduct}}</view>
+    </view>
+
+    <scroll-view scroll-y class='getVoucher_content' style='height:{{windowHeight-230}}px'>
+      <view class='contentwrap'>
+        <!-- 产品列表 -->
+        <view class='dingyue'>
+          <view class='dingyuetitle'>
+            <text>{{productName}}</text>
+          </view>
+          <view class='dingoptions'>
+            <view class='dingitem {{selectyue==index?"dingitems":""}}' wx:for='{{productData}}' wx:key='' bindtap='selectyue' data-index='{{index}}' data-id='{{item.id}}' data-name='{{item.attrOptionalName}}' data-price='{{item.currentOptionalPrice}}' data-oldprice='{{item.attrOptionalPrice}}'>{{item.attrOptionalName}}</view>
+          </view>
+        </view>
+        <!-- 收花时间 -->
+        <view class='dingyue' wx:if='{{getTime.length>0&&getTime}}'>
+          <view class='dingyuetitle'>
+            <text>预计收花时间</text>
+            <text class='timess'>{{shouhuaTime}}</text>
+          </view>
+          <view class='dingoptions'>
+            <view class='dingitem {{selectxing==index?"dingitems":""}}' wx:for='{{getTime}}' wx:key='' bindtap='selectxing' data-index='{{index}}' data-data='{{item.name}}'>{{item.name}}</view>
+          </view>
+        </view>
+        <!-- 购买数量 -->
+        <view class='dingyue'>
+          <view class='dingyuetitle'>
+            <text>购买数量</text>
+          </view>
+          <view class='dingoptions'>
+            <view class='itemprice_right'>
+              <view class='itemprice_right_item1' bindtap='countsub'>-</view>
+              <input class='itemprice_right_item' disabled='disabled' value='{{buyCount}}' bindblur='ordercounts'></input>
+              <view class='itemprice_right_item2' bindtap='countadd'>+</view>
+            </view>
+          </view>
+        </view>
+
+        <!-- 优惠加购 -->
+        <view class='dingyue' wx:if='{{youhuidata.length>0&&youhuidata}}'>
+          <view class='dingyuetitle'>
+            <text>优惠加购</text>
+            <text class='youtxt'>（可多选）</text>
+          </view>
+          <view class='dingoptions'>
+            <scroll-view class='mmp' scroll-x>
+              <block wx:for="{{youhuidata}}" wx:key="">
+                <view class='youitems' bindtap='selectoption' data-index='{{index}}'>
+                  <image class='selectimg' src='../../images/mall/{{item.selected?"select":"unselect"}}.png'></image>
+                  <image src='{{Furl}}{{item.image}}' class='lalalalimg'></image>
+                  <view class='youname textgray'>{{item.name}}</view>
+                  <view class='youprice textgray'>
+                    <text class='younewprice'>￥{{item.currentPrice}}</text>
+                    <text class='asdfass'>￥{{item.price}}</text>
+                  </view>
+                </view>
+              </block>
+            </scroll-view>
+          </view>
+        </view>
+        <!-- 赠送 -->
+        <view class='dingyue' wx:if='{{zengsongdata.length>0&&zengsongdata}}'>
+          <view class='dingyuetitle'>
+            <text>赠送</text>
+          </view>
+          <view class='dingoptions'>
+            <scroll-view class='mmp' scroll-x>
+              <block wx:for="{{zengsongdata}}" wx:key="">
+                <view class='youitems' bindtap='selectoptions' data-index='{{index}}'>
+                  <!-- <image class='selectimg' src='../../images/mall/{{item.selected?"select":"unselect"}}.png'></image> -->
+                  <image src='{{Furl}}{{item.image}}' class='lalalalimg'></image>
+                  <view class='youname textgray'>{{item.name}}</view>
+                  <view class='youprice'>
+                    <!-- <text class='zengprice colorpinks'>赠送</text> -->
+                  </view>
+                </view>
+              </block>
+            </scroll-view>
+          </view>
+        </view>
+
+
+      </view>
+    </scroll-view>
+    <view class='sure' catchtap='gotoconfirmOrder'>确认</view>
+  </view>
+
+</view>

@@ -1,0 +1,56 @@
+<view class='container'>
+  <scroll-view class='myscroll' style="height:{{windowheight?windowheight+'px':'auto'}}" scroll-y='true'>
+    <view class='scrollwrap'>
+      <!-- 订单内容 -->
+      <view class='ordercontentswrap' wx:for='{{orderData}}' wx:key=''>
+        <!-- 顶部状态 -->
+        <view class='order_contenttop'>
+          <text>{{item.downTime}}</text>
+          <text class='colorpink' wx:if='{{item.orderStatus=="5"}}'>退款审核中</text>
+          <text class='colorpink' wx:if='{{item.orderStatus=="6"}}'>审核失败</text>
+          <text class='colorpink' wx:if='{{item.orderStatus=="7"}}'>已退款</text>
+        </view>
+        <!-- 订单内容 -->
+        <view class='order_contentswrap' bindtap='gotoordersDetail' data-id='{{item.id}}' data-ordernum='{{item.orderNum}}'>
+          <view class='order_contents'>
+            <view class='ordergoodsimg'>
+              <image src='{{Furl}}{{item.faceImg}}'></image>
+            </view>
+            <view class='ordergoodscontent'>
+              <view class='ordertitles'>
+                <view class='orderxtxtxt'>{{item.goodsName}}</view>
+                <view class='textgray'>x{{item.buyCount}}</view>
+              </view>
+              <view class='ordercontenttxt textgray' wx:if='{{item.goodsType=="1"}}'>
+                <text>{{item.orderType=='0'?item.buyMonthTitle+'，':''}}{{item.orderType=='0'?item.getTimeTitle+'，':''}}{{item.orderType=='0'?item.sendWeekTypeTitle+'；':''}}{{item.addBuyTitle?'加购商品：'+item.addBuyTitle+'；':''}}{{item.giftTitle?'赠品：'+item.giftTitle+'；':''}}</text>
+              </view>
+              <view class='ordercontenttxt textgray' wx:if='{{item.goodsType=="0"}}'>
+                <text>{{item.addBuyTitle?'加购商品：'+item.addBuyTitle+'；':''}}{{item.giftTitle?'赠品：'+item.giftTitle+'；':''}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='orderbottombtnwrap' bindtap='gotoordersDetail' data-id='{{item.id}}' data-ordernum='{{item.orderNum}}'>
+          <view class='orderpaymsg'>
+            <text class='msgtxt'>共{{item.buyCount+item.addBuyCount+item.giftCount}}件商品</text>
+            <text>实付：￥{{item.totalPrice}}</text>
+          </view>
+        </view>
+        <view class='part_line3'></view>
+        <!-- 底部按钮 -->
+        <view class='orderbottombtnwrap'>
+          <view class='orderbottombtn'>
+            <!-- <view class='btnitemss' bindtap='closeorder'>客服</view> -->
+             <button class='btnitemss mybtn' open-type='contact' > 在线客服</button>
+            <!-- <view class='btnitemss' bindtap='gotopay'>退款</view> -->
+          </view>
+        </view>
+      </view>
+      <view class='textgray thend'>
+        <view class='partlinsb'></view>
+        <text class='asdfasdf'>幸有花作伴·不负好时光</text>
+        <view class='partlinsb'></view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,231 @@
+/* pages/logistics/logistics.wxss */page{
+  background-color: #f2f2f2;
+
+}
+.wraps{
+  width: 100%;
+  background-color: #fff;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    /* background-color: red; */
+}
+.tops{
+width: 94%;
+height: 80rpx;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 28rpx;
+}
+.topleft{
+  font-weight: bold;
+}
+.addresswrap{
+  width: 94%;
+  height: 160rpx;
+  /* background-color: red; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.addresswrap image{
+  width: 52rpx;
+  height: 58rpx;
+  margin-right: 15rpx;
+}
+.txtxtxtxt{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 80rpx;
+  /* background-color: yellow; */
+}
+.goodsmessage{
+  width: 94%;
+  padding: 30rpx 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: red; */
+}
+.titles{
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+.messageitem{
+  width: 100%;
+  /* height: 180rpx; */
+  height: auto;
+  /* background-color: yellow; */
+  border-top: 2rpx solid #f2f2f2;
+  border-bottom: 2rpx solid #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+   padding: 30rpx 0;
+}
+.itemsleft{
+  width: 20%;
+  height: 120rpx;
+  /* background-color: yellow; */
+}
+.itemsleft image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.itemsright{
+  width: 80%;
+  height: auto;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.nameitem{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nameitems{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 24rpx;
+  /* background-color: red; */
+  margin-top: 15rpx;
+}
+.mymessage{
+  width: 80%;
+  /* background-color: yellow; */
+}
+.optionsitems{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+  padding: 6rpx 0;
+}
+.bottomwrap{
+width: 94%;
+/* background-color: yellow; */
+padding: 30rpx 0;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+}
+.bottoptions{
+  width: 100%;
+  height: 90rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+ 
+  display: flex;
+}
+.bottleft{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  font-size: 30rpx;
+}
+.botttxtxt{
+  margin-left: 25rpx;
+  margin-right: 20rpx;
+}
+.sadfasdfa{font-weight: bold;}
+.bottright{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 30rpx;
+  }
+  /* //////后面写的样式 */
+  .yundanhaowrap{
+    width: 100%;
+    height: 120rpx;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .yundanhao{
+width: 92%;
+height: 100%;
+/* background-color: green; */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+  }
+  .dantitle{
+    font-size: 30rpx;
+  }
+  .danbottom{
+margin-top: 10rpx;
+display: flex;
+font-size: 24rpx;
+  }
+  /* 物流样式 */
+  .wuliuwrap{
+    width:100%;
+    height: auto;   
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wuliu{
+    width: 92%;
+    height: auto;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 15rpx;
+    padding: 20rpx 0;
+  border-bottom: 2rpx solid #f2f2f2;
+  }
+  .wuliuleft{
+    width: 10%;
+    /* background-color: green; */
+  }
+  .wuliuimg{
+    width: 30rpx;
+    height: 30rpx;
+  }
+  .wuliuimgs{
+    width: 20rpx;
+    height: 20rpx;
+  }
+  .wuliuright{
+     width: 90%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     align-items: flex-start;
+  }
+  .wuliutitle{
+    font-size: 24rpx;
+    margin-bottom: 15rpx;
+  }
+   .wuliutime{
+    font-size: 24rpx;
+  }

@@ -1,0 +1,257 @@
+<view class='container'>
+  <!-- tab导航栏 -->
+  <view class='topcategory'>
+    <scroll-view scroll-x="true" scroll-left='' class="tab_comtainer" scroll-into-view='to{{catalogSelect}}'>
+      <block wx:for="{{categoryData}}" wx:key="">
+        <text class="tab_item {{index == catalogSelect ? 'active':''}}" id='to{{index}}' bindtap='tabSelect' data-select="{{index}}" data-cateID='{{item.danceCategoryId}}' data-topimg='{{item.categoryImageOne}}'>{{item.categoryName}} </text>
+      </block>
+    </scroll-view>
+  </view>
+  <!-- 页面内容 -->
+  <swiper class="tab-box" current="{{catalogSelect}}" duration="300" bindchange="switchContent" style="height:{{windowheight?windowheight-50+'px':'auto'}}">
+    <swiper-item wx:for="{{categoryData}}" wx:for-item="tabItem" wx:key="" wx:for-index='myindex' class="tab-content">
+      <scroll-view style="height:{{windowheight?windowheight-50+'px':'auto'}}" scroll-y class='lalallawrap'>
+        <!-- 推荐 -->
+        <view class='indexwrap' wx:if='{{myindex==0}}'>
+          <!-- 轮播图 -->
+          <swiper class="banner" autoplay="true" indicator-dots='true' circular='true' interval="5000" duration="1000" style='height:{{Height}}'>
+            <block wx:for="{{bannersimages}}" wx:key="" wx:for-item='itembanner'>
+              <swiper-item>
+                <image src="{{Furl}}{{itembanner.images}}" style='width:100%;height:100%' bindload='imgHeight' bindtap='gotoactive' data-type='{{itembanner.typeStatus}}'data-id='{{itembanner.id}}' data-goodstype='{{itembanner.goodsType}}' data-goodsid='{{itembanner.goodsId}}'/>
+              </swiper-item>
+            </block>
+          </swiper>
+          <!-- //鲜花主题 -->
+          <view class='contentwrap'>
+            <!-- <view class='topicleft'>
+              <image src='{{Furl}}{{categoryDatas[0].categoryImage}}' bindtap='changeSelect' data-select="{{categoryDatas[0].orderNum-1}}" data-cateID='{{categoryDatas[0].danceCategoryId}}' data-topimg='{{categoryDatas[0].categoryImageOne}}'></image>
+            </view> -->
+              <view class='topicleft'>
+              <image src='{{Furl}}{{categoryDatas[0].categoryImage}}' bindtap='gotofreePurchase'></image>
+            </view>
+            <view class='topicright'>
+              <image src='{{Furl}}{{categoryDatas[1].categoryImage}}' bindtap='changeSelect' data-select="{{categoryDatas[1].order}}" data-cateID='{{categoryDatas[1].danceCategoryId}}' data-topimg='{{categoryDatas[1].categoryImageOne}}'></image>
+              <image src='{{Furl}}{{categoryDatas[2].categoryImage}}' bindtap='changeSelect' data-select="{{categoryDatas[2].order}}" data-cateID='{{categoryDatas[2].danceCategoryId}}' data-topimg='{{categoryDatas[2].categoryImageOne}}'></image>
+            </view>
+          </view>
+          <!-- 限时团购 -->
+          <view class='titileswrap'>
+            <view class='contentTitle'>
+              <view class='titleLeft'>
+                <text class='blacktxt'>限时团购</text>
+                <text class='graytxt'> / Flash Sale</text>
+              </view>
+              <view class='titleRight'>
+                <text class='blacktxts'>{{xianshiindex+1}}</text>
+                <text class='smalltxt'>/{{limitData.length}}</text>
+              </view>
+            </view>
+          </view>
+          <swiper class='limitwrap' duration='300' bindchange='getindex' previous-margin="0px" next-margin="-1rpx">
+            <block wx:for="{{limitData}}" wx:key=''>
+              <swiper-item>
+                <view class='timeLimit' bindtap='gotogoodsDetails' data-goodsid='{{item.goodsId}}' data-id='{{item.id}}' data-type='{{item.goodsType}}' data-status='{{item.status}}'>
+                  <image src='{{Furl}}{{item.faceImg}}' class='timeleft'></image>
+                  <view class='timetxt'>
+                    <view class='timeless'>
+                      <image src='../../images/mall/timedown.png'></image>
+                     
+                      <text>{{item.difftime}}</text>
+                    </view>
+                    <view class='flowername'>{{item.goodsName}}</view>
+                    <view>
+                      <text class='oldprice'>原价￥{{item.price}}</text>
+                      <text class='newprice'>￥{{item.groupPrice}}</text>
+                    </view>
+                  </view>
+                </view>
+              </swiper-item>
+            </block>
+          </swiper>
+          <!-- 新品专区 -->
+          <view class='titileswraps'>
+            <view class='contentTitle'>
+              <view class='titleLeft'>
+                <text class='blacktxt'>新品专区</text>
+                <text class='graytxt'> / New Product</text>
+              </view>
+              <view class='titleRight'>
+                <text class='blacktxts'>{{goodsindex+1}}</text>
+                <text class='smalltxt'>/{{goodsNewData.length}}</text>
+              </view>
+            </view>
+          </view>
+      
+          <view class='newgoods'>
+            <swiper class='goodsswper' next-margin="135rpx" bindchange='getgoodsindex'>
+              <block wx:for="{{goodsNewData}}" wx:key="">
+                <swiper-item>
+                  <view class='goodsitem' bindtap='gotogoodsDetail' data-type='{{item.goodsType}}' data-id='{{item.goodsId}}'>
+                    <image src='{{Furl}}{{item.faceImg}}'></image>
+                    <view class='goodname'>
+                      <text>{{item.goodsName}}</text>
+                      <text class='textgray fbt'>{{item.subName}}</text>
+                    </view>
+                    <view class='itembottom'>
+                      <text class='fuhao'>￥</text>
+                      <text class='discptxt'>{{item.minPrice}}</text>
+                      <text class='theold textgray'>原价{{item.minOldPrice}}</text>
+                    </view>
+                  </view>
+                </swiper-item>
+              </block>
+            </swiper>
+          </view>
+          <!--热卖专区 -->
+          <view class='titileswraps'>
+            <view class='contentTitle'>
+              <view class='titleLeft'>
+                <text class='blacktxt'>热卖专区</text>
+                <text class='graytxt'> / Hot Sale</text>
+              </view>
+            </view>
+          </view>
+          <view class='falls'>
+            <view class='falsitem'>
+              <view class='items' wx:for='{{Hotdata}}' wx:key='' wx:if="{{index%2==0}}" bindtap='gotogoodsDetail' data-type='{{item.goodsType}}' data-id='{{item.goodsId}}'>
+                <image src='{{Furl}}{{item.faceImg}}' mode='widthFix'></image>
+                <view class='itemname'>
+                  <text>{{item.goodsName}}</text>
+                  <text class='fbt textgray'>{{item.subName}}</text>
+                </view>
+                <view class='itembottoms'>
+                  <view>
+                    <text class='fuhao'>￥</text>
+                    <text class='meishu'>{{item.minPrice}}</text>
+                    <text class='theold textgray'>原价{{item.minOldPrice}}</text>
+                  </view>
+                  <!-- <view class='btnbuy'>购买</view> -->
+                </view>
+              </view>
+            </view>
+            <view class='falsitem'>
+              <view class='items' wx:for='{{Hotdata}}' wx:key='' wx:if="{{index%2==1}}" bindtap='gotogoodsDetail' data-type='{{item.goodsType}}' data-id='{{item.goodsId}}'>
+                <image src='{{Furl}}{{item.faceImg}}' mode='widthFix'></image>
+                <view class='itemname'>
+                  <text>{{item.goodsName}}</text>
+                  <text class='fbt textgray'>{{item.subName}}</text>
+                </view>
+                <view class='itembottoms'>
+                  <view>
+                    <text class='fuhao'>￥</text>
+                    <text class='meishu'>{{item.minPrice}}</text>
+                    <text class='theold textgray'>原价{{item.minOldPrice}}</text>
+                  </view>
+                  <!-- <view class='btnbuy'>购买</view> -->
+                </view>
+              </view>
+            </view>
+          </view>
+          <!--发现好物 -->
+          <view class='titileswrapss'>
+            <view class='contentTitle'>
+              <view class='titleLeft'>
+                <text class='blacktxt'>发现好物</text>
+                <text class='graytxt'> / Good Things</text>
+              </view>
+            </view>
+          </view>
+          <view class='falls'>
+            <view class='falsitem'>
+              <view class='items' wx:for='{{findData}}' wx:key='' wx:if="{{index%2==0}}" bindtap='gotogoodsDetail' data-type='{{item.goodsType}}' data-id='{{item.goodsId}}'>
+                <image src='{{Furl}}{{item.faceImg}}' mode='widthFix'></image>
+                <view class='itemname'>
+                  <text>{{item.goodsName}}</text>
+                  <text class='fbt textgray'>{{item.subName}}</text>
+                </view>
+                <view class='itembottoms'>
+                  <view>
+                    <text class='fuhao'>￥</text>
+                    <text class='meishu'>{{item.minPrice}}</text>
+                    <text class='theold textgray'>原价{{item.minOldPrice}}</text>
+                  </view>
+                  <!-- <view class='btnbuy'>购买</view> -->
+                </view>
+              </view>
+            </view>
+            <view class='falsitem'>
+              <view class='items' wx:for='{{findData}}' wx:key='' wx:if="{{index%2==1}}" bindtap='gotogoodsDetail' data-type='{{item.goodsType}}' data-id='{{item.goodsId}}'>
+                <image src='{{Furl}}{{item.faceImg}}' mode='widthFix'></image>
+                <view class='itemname'>
+                  <text>{{item.goodsName}}</text>
+                  <text class='fbt textgray'>{{item.subName}}</text>
+                </view>
+                <view class='itembottoms'>
+                  <view>
+                    <text class='fuhao'>￥</text>
+                    <text class='meishu'>{{item.minPrice}}</text>
+                    <text class='theold textgray'>原价{{item.minOldPrice}}</text>
+                  </view>
+                  <!-- <view class='btnbuy'>购买</view> -->
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class='textgray thend'>
+            <view class='partlinsb'></view>
+            <text class='asdfasdf'>幸有花作伴·不负好时光</text>
+            <view class='partlinsb'></view>
+          </view>
+        </view>
+        <!-- 其他页面1 -->
+        <view class='otherwrap' wx:if='{{myindex!=0}}'>
+          <view class='blockimg'>
+            <image src='{{Furl}}{{tabItem.categoryImageOne}}' mode='widthFix'></image>
+          </view>
+          <view class='falls'>
+            <view class='falsitem'>
+              <view class='items' wx:for='{{tabItem.goods}}' wx:key='' wx:if="{{index%2==0}}" bindtap='gotogoodsDetail' data-type='{{item.goodsType}}' data-id='{{item.goodsId}}'>
+                <image src='{{Furl}}{{item.faceImg}}' mode='widthFix'></image>
+                <view class='itemname'>
+                  <text>{{item.goodsName}}</text>
+                  <text class='fbt textgray'>{{item.subName}}</text>
+                </view>
+                <view class='itembottoms'>
+                  <view>
+                    <text class='fuhao'>￥</text>
+                    <text class='meishu'>{{item.minPrice?item.minPrice:0}}</text>
+                    <text class='theold textgray'>原价{{item.minOldPrice?item.minOldPrice:0}}</text>
+                  </view>
+                  <!-- <view class='btnbuy'>购买</view> -->
+                </view>
+              </view>
+            </view>
+            <view class='falsitem'>
+              <view class='items' wx:for='{{tabItem.goods}}' wx:key='' wx:if="{{index%2==1}}" bindtap='gotogoodsDetail' data-type='{{item.goodsType}}' data-id='{{item.goodsId}}'>
+                <image src='{{Furl}}{{item.faceImg}}' mode='widthFix'></image>
+                <view class='itemname'>
+                  <text>{{item.goodsName}}</text>
+                  <text class='fbt textgray'>{{item.subName}}</text>
+                </view>
+                <view class='itembottoms'>
+                  <view>
+                    <text class='fuhao'>￥</text>
+                    <text class='meishu'>{{item.minPrice?item.minPrice:0}}</text>
+                    <text class='theold textgray'>原价{{item.minOldPrice?item.minOldPrice:0}}</text>
+                  </view>
+                  <!-- <view class='btnbuy'>购买</view> -->
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class='textgray thend'>
+            <view class='partlinsb'></view>
+            <text class='asdfasdf'>幸有花作伴·不负好时光</text>
+            <view class='partlinsb'></view>
+          </view>
+        </view>
+
+
+
+
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+
+
+</view>

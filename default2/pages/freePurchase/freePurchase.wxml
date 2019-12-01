@@ -1,0 +1,181 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='container'>
+  <view class="topimgwrap">
+    <image class="topimg" src="{{Furl}}{{topImg}}" mode="widthFix"></image>
+    <view class="tips" bindtap="showrule">买花须知</view>
+  </view>
+  <view class="huiyuanwrap" bindtap="gotohuiyuan">
+    <view class="huiyuan">
+      <view class="huiyuanleft">
+        <view class="huiyuanbtn">会员卡</view>
+        <text class="huiyuantext">当前开卡，立享会员优惠</text>
+      </view>
+      <view class="huiyuanright">
+        <view class="kaiqi">开启月卡</view>
+        <image src="../../images/free/goto.png" class="gotoimg"></image>
+      </view>
+    </view>
+  </view>
+  <view class='otherwrap'>
+    <view class='falls'>
+      <view class='falsitem'>
+        <view class='items' wx:for='{{goodsData}}' wx:key='' wx:if="{{index%2==0}}" bindtap='gotogoodsDetail' data-type='{{item.goodsType}}' data-id='{{item.goodsId}}'>
+          <image src='{{Furl}}{{item.faceImg}}' mode='widthFix'></image>
+          <view class='itemname'>
+            <text class="namestyle">{{item.goodsName}}</text>
+            <!-- <text class='fbt textgray'>{{item.subName}}</text> -->
+          </view>
+          <view class='itembottoms'>
+            <view class="wansi">
+              <text class='fuhao'>￥</text>
+              <text class='meishu'>{{item.basePrice?item.basePrice:0}}</text>
+            </view>
+          </view>
+          <view class="tempcaculate">
+            <!-- wx:if='{{item.isMemberGoods=="1"}}' -->
+            <view class='theold'>
+              <text class='huiyuandes'>会员价</text>
+              <text>￥{{item.isMemberGoods=="1"?item.memberPrice:item.basePrice}}</text>
+            </view>
+            <view class="{{item.count>0?'caculate':'caculates'}}">
+              <image src="../../images/free/sub.png" class="subimg" catchtap="sub" data-goodsid="{{item.goodsId}}" wx:if='{{item.count>0}}'></image>
+              <view wx:if='{{item.count>0}}'>{{item.count}}</view>
+              <image src="../../images/free/add.png" class="addimg" catchtap="add" data-goodsid="{{item.goodsId}}"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='falsitem'>
+        <view class='items' wx:for='{{goodsData}}' wx:key='' wx:if="{{index%2==1}}" bindtap='gotogoodsDetail' data-type='{{item.goodsType}}' data-id='{{item.goodsId}}'>
+          <image src='{{Furl}}{{item.faceImg}}' mode='widthFix'></image>
+          <view class='itemname'>
+            <text class="namestyle">{{item.goodsName}}</text>
+            <!-- <text class='fbt textgray'>{{item.subName}}</text> -->
+          </view>
+          <view class='itembottoms'>
+            <view class="wansi">
+              <text class='fuhao'>￥</text>
+              <text class='meishu'>{{item.basePrice?item.basePrice:0}}</text>
+            </view>
+
+          </view>
+          <view class="tempcaculate">
+            <!-- wx:if='{{item.isMemberGoods=="1"}}' -->
+            <view class='theold'>
+              <text class='huiyuandes'>会员价</text>
+              <text>￥{{item.isMemberGoods=="1"?item.memberPrice:item.basePrice}}</text>
+            </view>
+            <view class="{{item.count>0?'caculate':'caculates'}}">
+              <image src="../../images/free/sub.png" class="subimg" catchtap="sub" data-goodsid="{{item.goodsId}}" wx:if='{{item.count>0}}'></image>
+              <view wx:if='{{item.count>0}}'>{{item.count}}</view>
+              <image src="../../images/free/add.png" class="addimg" catchtap="add" data-goodsid="{{item.goodsId}}"></image>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+    <view class='textgray thend'>
+      <view class='partlinsb'></view>
+      <text class='asdfasdf'>幸有花作伴·不负好时光</text>
+      <view class='partlinsb'></view>
+    </view>
+  </view>
+  <!-- <view class="bottomoptionswrap">
+    <view class="bottomoptions">
+      <view class="optionsleft">
+        <scroll-view class="myscroll" scroll-x="true" scroll-into-view='goto{{imgId}}' wx:if='{{selectImg.length>0}}'>
+          <image src="{{item.img}}" class="btnimg" wx:for='{{selectImg}}' wx:key='' id='goto{{item.id}}'></image>
+        </scroll-view>
+        <scroll-view class="myscroll" scroll-x="true" scroll-into-view='goto{{imgId}}' wx:else>
+          <image src="{{item.img}}" class="btnimg" wx:for='{{selectImgs}}' wx:key='' id='goto{{item.id}}'></image>
+        </scroll-view>
+        <view class="btnview">
+          <image src="../../images/free/btns.png" class="btnsimg"></image>
+        </view>
+      </view>
+      <view class="optionsright">
+        <view class="optionsrighttop">
+          <text class="yixuan">已选{{selectCount}}件</text>
+          <text>总价</text>
+          <text>￥{{selectPrice}}</text>
+        </view>
+        <view class="{{isfull?'optionsrightbottoms':'optionsrightbottom'}}" bindtap="freePieceOrder">立即购买</view>
+      </view>
+    </view>
+  </view> -->
+  <view class="huiyuantips" catchtap="gotohuiyuan" wx:if='{{isFreeMember=="0"&&selectCount>0}}'>
+    <text class="huiyuantipstxt">成为会员本单可省{{keshengPrice}}元</text>
+  </view>
+  <view class="bottomnew">
+    <view class="bottomnewleft">
+      <view class="bottomnewleft_left" bindtap="showGoodsList">
+
+        <image src='../../images/free/car.png' class="mylogos" wx:if='{{selectCount>0}}'>
+          <view class="buydot">{{selectCount}}</view>
+        </image>
+        <image src='../../images/free/cars.png' class="mylogos" wx:else></image>
+      </view>
+      <view class="bottomnewleft_right">
+        <view class="bottomnewtxt">
+          <text>总价</text>
+          <text class="bottomnewtxtprice">￥{{selectPrice}}</text>
+        </view>
+        <text class="bottomnewcount">已选{{selectCount}}件</text>
+      </view>
+
+    </view>
+    <view class="{{isfull?'bottomnewright':'bottomnewrights'}}" bindtap="freePieceOrder">立即购买</view>
+
+
+  </view>
+  <!-- 已经选择的商品列表 -->
+  <!--屏幕背景变暗的背景  -->
+  <view class="commodity_screen" bindtap="hideGoodsList" wx:if="{{showModalStatus}}" catchtouchmove="myCatchTouch"></view>
+  <!--弹出框  -->
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+    <view class="listtop">
+      <view class="listToptextwrap">
+        <text>已选</text>
+        <text class="listToptext">{{selectCount}}件</text>
+        <text>商品</text>
+      </view>
+
+    </view>
+    <scroll-view scroll-y class='scrollview' catchtouchmove="myCatchTouch">
+      <view class="thewrapview">
+        <view class="goodsListItem" wx:for='{{selectListData}}' wx:key=''>
+          <view class="goodsListItemleft">
+            <image src="{{Furl}}{{item.faceImg}}" class="goodsListItemleftimg"></image>
+          </view>
+          <view class="goodsListItemright">
+            <view class="goodsListItemright_top">{{item.goodsName}}</view>
+            <view class="goodsListItemright_center">￥{{item.basePrice}}</view>
+            <view class="goodsListItemright_bottom">
+              <view class="goodsListItemright_bottom_left">
+                <text class="listprice">会员价</text>
+                <text>￥{{item.isMemberGoods=="1"?item.memberPrice:item.basePrice}}</text>
+              </view>
+              <view class="goodsListItemright_bottom_right">
+                <image src="../../images/free/sub.png" class="listsubimg" catchtap="sub" data-goodsid="{{item.goodsId}}" wx:if='{{item.count>0}}'></image>
+                <view wx:if='{{item.count>0}}' style='color:#000;'>{{item.count}}</view>
+                <image src="../../images/free/add.png" class="listaddimg" catchtap="add" data-goodsid="{{item.goodsId}}"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<!-- 弹框代码 -->
+<view class="modalDlg" hidden="{{showModal}}" catchtouchmove="preventTouchMove">
+  <view class='agreementTitle'>买花须知</view>
+  <scroll-view class='myscrolls' scroll-y>
+    <!-- <text class='itemContent' wx:for='{{xuzhiData}}' wx:key=''>{{index+1}}</text> -->
+    <view class="xuzhiclass">
+      <template is="wxParse" data="{{wxParseData:contexts.nodes}}" />
+    </view>
+  </scroll-view>
+</view>
+<view class="mask" catchtouchmove="preventTouchMove" bindtap="colserule" hidden="{{showModal}}"></view>

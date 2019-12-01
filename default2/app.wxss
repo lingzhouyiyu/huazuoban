@@ -1,0 +1,62 @@
+/**app.wxss**/
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 28rpx;
+  /* color: rgb(50, 50, 50); */
+  overflow: hidden;
+}
+.weight{
+  font-weight: bold;
+}
+.part_line3 {
+  width: 100%;
+  height: 3rpx;
+  background-color: #f2f2f2;
+}
+
+.part_line10 {
+  width: 100%;
+  height: 10rpx;
+  background-color: #f2f2f2;
+}
+
+.part_line15 {
+  width: 100%;
+  height: 15rpx;
+  background-color: #f2f2f2;
+}
+.part_line20 {
+  width: 100%;
+  height: 20rpx;
+  background-color: #f2f2f2;
+}
+.textgray {
+  color: #888;
+}
+
+.colorpink {
+  color: #ff6398;
+}
+
+.colorpinks {
+  color: #ff4081;
+}
+
+.backcolorpink {
+  background-color: #ff6398;
+}
+
+.backcolorpinks {
+   background-color: #ff4081;
+}
+.backcolorgray {
+   background-color: #f2f2f2;
+}

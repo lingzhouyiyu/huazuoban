@@ -1,0 +1,354 @@
+page{
+  background-color: #fafafa;
+
+}
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.myscroll{
+  width: 100%;
+}
+.mingtop {
+  width: 100%;
+  height: 300rpx;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mineheader {
+  width: 92%;
+  display: flex;
+  height: 100rpx;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: red; */
+  margin-top: 50rpx;
+}
+
+.mineheader image {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 10rpx;
+  border-radius: 50%;
+}
+
+.headertxt {
+  /* height: 100%; */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: flex-start;
+  font-size: 28rpx;
+  /* background-color: yellow; */
+  margin-top: -5rpx;
+}
+.adasdas{
+  font-size: 36rpx;
+}
+.huiyuan {
+  font-size: 28rpx;
+}
+
+.biground {
+  width: 250rpx;
+  height: 125rpx;
+  border-radius: 0 0 250rpx 250rpx;
+  position: absolute;
+  top: 0;
+  right: 70rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: yellow;
+  font-size: 28rpx;
+}
+.biground image{
+  width: 48rpx;
+  height: 48rpx;
+  margin-top: 10rpx;
+}
+.smallround{
+ width: 150rpx;
+  height: 75rpx;
+  border-radius: 0 0 150rpx 150rpx;
+  position: absolute;
+  top: 0;
+  right: -17rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 25rpx;
+  background-color: #fff;
+  opacity: 0.6;
+}
+.smallround text{
+  margin-top: 15rpx;
+}
+.topopwrap{
+  width: 100%;
+  height: 100rpx;
+  position: relative;
+}
+.topopitem{
+  width: 92%;
+  height: 160rpx;
+  background-color: #fff;
+  position: absolute;
+  top: -80rpx;
+  left: 30rpx;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topopitems{
+  width: 33.3%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+}
+.topopnum{
+color: #ff6398;
+margin-bottom: 20rpx;
+font-weight: bold;
+font-size: 32rpx;
+}
+.myoderwrap{
+  width: 100%;
+   background-color: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.myoder{
+  width: 92%;
+  height: 90rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.myordertxt{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.myorderright{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.myorderright image{
+width: 25rpx;
+height: 25rpx;
+margin-left: 10rpx;
+}
+.mmpwrap{
+  width: 100%;
+  background-color: #fff;
+}
+.mmpoption{
+  width: 96%;
+  height: 180rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: red; */
+}
+.mmpoptions{
+  width: 100%;
+  height: 180rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* background-color: yellow; */
+}
+.mmpoptionss{
+  width: 100%;
+  height: 180rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  /* background-color: yellow; */
+}
+.mmpitem{
+  width: 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.tipsdots{
+  width:30rpx;
+  height: 30rpx;
+  position: absolute;
+  right: 5rpx;
+  top: 40rpx;
+  /* padding: 5rpx 5rpx; */
+  border-radius: 20rpx;
+  background-color: red;
+  color: #ffffff;
+  font-size: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mmpitem image{
+  width: 52rpx;
+  height: 52rpx;
+  margin-bottom: 20rpx;
+}
+.mmpitems{
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5rpx;
+  /* background-color: yellow; */
+  position: relative;
+}
+.tipsdot{
+  position: absolute;
+  right: 20rpx;
+  top: 40rpx;
+  padding: 5rpx 10rpx;
+  border-radius: 30rpx;
+  background-color: red;
+  color: #ffffff;
+  font-size: 20rpx;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mmpitems image{
+  width: 56rpx;
+  height: 56rpx;
+  margin-bottom: 20rpx;
+}
+/* 顶部新样式 */
+.centertopone{
+  width: 100%;
+  height: 300rpx;
+   background-color: #FFF8F3;
+   /* background-color: red; */
+}
+.centertipwrap{
+   margin-top: 10rpx;
+  width: 96%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bianjiziliao{
+  /* color: #fff; */
+  font-size: 25rpx;
+  /* font-weight: bold; */
+}
+.centertip{
+  width: 170rpx;
+  height: 60rpx;
+  /* padding: 8rpx 20rpx; */
+  background-color: #ECECEB;
+  /* opacity: 0.5; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-right-radius: 35rpx;
+ font-size: 25rpx;
+  border-bottom-right-radius: 35rpx;
+  
+}
+.guanzhudot{
+  width: 15rpx;
+  height: 15rpx;
+  background-color: red;
+  border-radius: 50%; 
+  margin-left: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.floatwrap{
+  width: 100%;
+  height: 166rpx;
+  position: relative;
+  /* margin-bottom: 30rpx; */
+  background-color: #fafafa;
+  /* background-color: yellow */
+}
+.floatcontents{
+  width: 92%;
+  height: 360rpx;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 30rpx;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: yellow; */
+}
+.centerheader{
+  width: 160rpx;
+  height: 175rpx;
+  margin-top: -80rpx;
+  z-index: 9999;
+  border-radius: 50%;
+}
+.centername{
+  font-size: 34rpx;
+  /* font-weight: bold; */
+  margin-top: 10rpx;
+}
+.centerhuiyuannum{
+  font-size: 25rpx;
+  margin-top: 10rpx;
+}
+.centeroptionswrap{
+  width: 88%;
+  height: 180rpx;
+  /* background-color: yellow; */
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-bottom: 3rpx solid #f2f2f2; */
+}
+.centeroptionitem{
+  width: 33.3%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+font-size: 25rpx;
+}
+.huozannum{
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+}
+

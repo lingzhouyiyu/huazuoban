@@ -1,0 +1,41 @@
+<view class='container'>
+  <view class='topwrap'>
+    <button class='topitem backcolorpink' open-type='contact'> 在线客服</button>
+    <!-- <view class='topitems backcolorpinks' bindtap='makepohonecall'>电话客服</view> -->
+  </view>
+  <view class='helpcenter colorpink'>
+    <view class='helpwrap'>
+      <text>帮助中心</text>
+    </view>
+  </view>
+  <view class='contactitemswrap'>
+    <view class='contactitems'>
+      <text>如何申请客服介入？</text>
+      <image src='../../images/mall/goto.png'></image>
+    </view>
+  </view>
+  <view class='contactitemswrap'>
+    <view class='contactitems'>
+      <text>什么是退换货运费险？</text>
+      <image src='../../images/mall/goto.png'></image>
+    </view>
+  </view>
+  <view class='contactitemswrap'>
+    <view class='contactitems'>
+      <text>在那里申请退换/售后？</text>
+      <image src='../../images/mall/goto.png'></image>
+    </view>
+  </view>
+  <view class='contactitemswrap'>
+    <view class='contactitems'>
+      <text>取到货后多长时间可以办理退货？</text>
+      <image src='../../images/mall/goto.png'></image>
+    </view>
+  </view>
+  <view class='contactitemswrap'>
+    <view class='contactitems'>
+      <text>在哪里领取优惠券？</text>
+      <image src='../../images/mall/goto.png'></image>
+    </view>
+  </view>
+</view>

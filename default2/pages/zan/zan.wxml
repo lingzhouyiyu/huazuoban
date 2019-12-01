@@ -1,0 +1,13 @@
+<view class='container'>
+  <view class='itemwrap'>
+    <view class='items' wx:for='{{zanData}}' wx:key=''>
+      <view class='item'>
+        <view class='itemleft'>
+          <image src='{{item.avatarUrl}}'></image>
+          <text>{{item.nickName}}</text>
+        </view>
+        <view class='itemright {{item.hasFollow=="0"?"":"ygz"}}' bindtap='clicks' data-id='{{item.appletsOpenId}}'>{{item.hasFollow=="0"?"关注":"已关注"}}</view>
+      </view>
+    </view>
+  </view>
+</view>

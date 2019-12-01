@@ -1,0 +1,26 @@
+<view class='container'>
+  <view class='topwrap'>
+    <view class='topwraps' bindtap='gotoaddAddress'>
+      <text>添加新地址</text>
+      <image src='../../images/mall/goto.png'></image>
+    </view>
+  </view>
+  <view class='addresscontentwrap' wx:for='{{addressList}}' wx:key='' bindtap='selectAddress' data-id='{{item.id}}'>
+    <view class='addresscontent'>
+      <view class='addressitemone'>
+        <view>
+          <text class='lallalala'>{{item.userName}}</text>
+          <text>{{item.phone}}</text>
+        </view>
+          <view wx:if='{{item.type=="1"}}' class='moren'>默认地址</view>
+      </view>
+      <view class='addressitemtwo textgray'>{{item.userPrivenceNew}}{{item.address}}</view>
+      <view class='addressitemthree'></view>
+      <view class='addressitemfour'>
+        <view class='addbottombtn' catchtap='deleteAddress' data-id='{{item.id}}'>删除</view>
+        <view class='addbottombtn' catchtap='gotoeditAddress' data-id='{{item.id}}'>编辑</view>
+        <view class='addbottombtn' catchtap='setDefaultAddress' data-id='{{item.id}}' wx:if='{{item.type=="0"}}'>设为默认</view>
+      </view>
+    </view>
+  </view>
+</view>

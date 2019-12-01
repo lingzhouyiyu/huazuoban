@@ -1,0 +1,234 @@
+page{
+  background-color: #f2f2f2;
+}
+.sadfawrap{
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx;
+}
+.address {
+  width: 92%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-color: red; */
+  font-size: 28rpx;
+
+  background-color: #fff;
+}
+
+.addleft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.addleft image {
+  width: 44rpx;
+  height: 44rpx;
+}
+.addtxt{
+  margin-left: 20rpx;
+}
+.addright{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+   font-size: 24rpx;
+  color: rgb(50, 50, 50)
+}
+.addright image {
+  width: 25rpx;
+  height: 25rpx;
+  margin-left: 15rpx;
+ 
+}
+.goodslist{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10rpx;
+  border-top: 2rpx solid #f2f2f2;
+  background-color: #fff;
+  /* background-color: yellow; */
+}
+.goodsitem{
+  width: 92%;
+  display: flex;
+padding: 15rpx 0;
+border-bottom: 2rpx solid #f2f2f2;
+/* background-color: green; */
+}
+.itemleft{
+  width: 25%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.itemleft image{
+  width: 130rpx;
+  height: 130rpx;
+}
+.itemright{
+  width: 75%;
+   display: flex;
+   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.rightone{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 30rpx;
+  
+}
+.righttwo{
+   width: 100%;
+   margin-top: 20rpx;
+    
+    font-size: 24rpx;
+}
+.rightthree{
+   width: 100%;
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+    
+    margin-top: 10rpx;
+    font-size: 24rpx;
+}
+.totalwrap{
+padding: 30rpx;
+width: 100%;
+background-color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.total{
+width: 92%;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+font-size: 30rpx;
+font-weight: bold;
+background-color: #fff;
+}
+.totalnum{
+  margin: 0 8rpx;
+}
+.totalprice{
+  margin-left: 10rpx;
+}
+.topay{
+width: 100%;
+height: 90rpx;
+position: fixed;
+bottom: 0;
+left: 0;
+display: flex;
+}
+.topayleft{
+   width: 70%;
+  height: 90rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* border-top: 2rpx solid #f2f2f2; */
+  background-color: #fff;
+}
+.paytxt1{
+  margin-left: 25rpx;
+  margin-right: 30rpx;
+  font-size: 28rpx;
+}
+.paytxt2{
+  font-size: 30rpx;
+  color: #ff6398;
+  font-weight: bold;
+}
+.topayright{
+  width: 30%;
+  height: 100%;
+  background-color: #ff4081;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 32rpx;
+}
+.dandu{
+  font-size: 24rpx;
+
+}
+.quanwrap{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  margin-top: 10rpx;
+}
+.quan {
+  width: 92%;
+  height: 90rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffff;
+}
+
+.quantitle {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-right: 20rpx;
+}
+
+.quanprice {
+  height: 48rpx;
+  background-color: #ff4081;
+  padding: 2rpx 15rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.quanright image {
+  width: 25rpx;
+  height: 25rpx;
+}
+/* //协议选择 */
+.selectagreementwrap{
+  width: 100%;
+  height: 100rpx;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx 0;
+  margin-top: -100rpx;
+}
+.selectagreement{
+  width: 94%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+}
+.agreementtext{
+  margin-right: 20rpx;
+}
+
+.lanse{
+  color: #ff6398;
+}

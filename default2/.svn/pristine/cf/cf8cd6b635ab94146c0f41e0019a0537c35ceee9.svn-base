@@ -1,0 +1,11 @@
+<view class='container'>
+  <view class='contentwrap'>
+    <view class='topimg'>
+      <image src='../../images/mall/test.jpg'></image>
+    </view>
+    <textarea class='area' placeholder='您反馈的产品建议，我们会认真阅读并进行改进，谢谢！' bindblur='getcontext'></textarea>
+    <input class='myinput' placeholder='您的邮箱' bindblur='getemail'></input>
+    <input class='myinputs' placeholder='您的收花人手机号' bindblur='getphone'></input>
+  </view>
+  <view class='submitbtn backcolorpinks' bindtap='submitData'>提交</view>
+</view>

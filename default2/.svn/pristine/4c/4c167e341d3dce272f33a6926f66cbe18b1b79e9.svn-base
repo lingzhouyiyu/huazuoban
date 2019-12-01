@@ -1,0 +1,126 @@
+page{
+  background-color: #fafafa;
+}
+.container{
+   position: fixed;
+  left: 0;
+  top: 0;
+}
+.topopwrap{
+  width: 100%;
+  height: 130rpx;
+  background-color: #fafafa;
+     position: fixed;
+  left: 0;
+  top: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 9999;
+}
+.topoptions{
+width:70%;
+height: 70rpx;
+border: 2rpx solid #ff6398;
+display: flex;
+font-size: 30rpx;
+border-radius: 10rpx;
+background-color: #fff;
+
+}
+.options{
+width:50%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center; 
+color: #ff6398;
+}
+.option{
+  width:50%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center; 
+border-right: 2rpx solid #ff6398;
+color: #ff6398;
+}
+.optionselected{
+color: #fff;
+background-color: #ff6398;
+}
+.thend{
+  font-size: 24rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2rpx;
+  /* font-style: italic; */
+  margin-bottom: 20rpx;
+  margin-top: 50rpx;
+}
+.partlinsb{
+  width: 20%;
+height: 1rpx;
+background-color: #888;
+}
+.asdfasdf{
+  margin: 0 10rpx;
+}
+/* 瀑布样式 */
+.myscroll{
+  width: 100%;
+}
+.scrollwrap{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.falls {
+  width: 94%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 130rpx;
+}
+
+.falsitem {
+  width: 48%;
+  height: auto;
+}
+
+.items {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  padding-bottom: 20rpx;
+}
+
+.items image {
+  width: 100%;
+}
+
+.itemname {
+  width: 90%;
+  margin-top: 15rpx;
+ margin-bottom: 15rpx;
+}
+
+.itembottoms {
+  width: 90%;
+  color: rgba(0, 0, 0, 0.42);
+}
+
+
+
+
+

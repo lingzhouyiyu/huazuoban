@@ -1,0 +1,9 @@
+<view class='container'>
+  <view class='topview'>
+    <image src='../../images/logos.jpg'></image>
+    <!-- <text>花作伴</text> -->
+  </view>
+  <view class='titles'>授权后体验更好的服务</view>
+  <view class='tips textgray'>·需要你的授权，以体验花作伴小程序全部功能</view>
+  <button class='bottombtn' open-type="getUserInfo" 	bindgetuserinfo="bindGetUserInfo">微信登陆</button>
+</view>

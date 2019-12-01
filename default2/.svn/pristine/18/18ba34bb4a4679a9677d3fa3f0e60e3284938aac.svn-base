@@ -1,0 +1,37 @@
+<view class='container'>
+  <view class='topsadfas'></view>
+  <view class='topwrap1'>
+    <view class='topitems' bindtap='gotocompanycollect'>
+      <image src='../../images/mine/qi.png'></image>
+      <text>个人/企业采集</text>
+    </view>
+    <view class='topitems' bindtap='gotoservicefeedback'>
+      <image src='../../images/mine/fan.png'></image>
+      <text>意见反馈</text>
+    </view>
+     <!-- bindtap='gotoservicecontact' -->
+    <view class='topitems'>
+      <!-- <image src='../../images/mine/lian.png'></image>
+      <text>联系我们</text> -->
+        <button class='fllopitem' open-type='contact'>
+          <image src='../../images/mine/lian.png'></image>         
+        </button>
+         <text class='teshutxt'>联系我们</text>
+    </view>
+  </view>
+  <view class='part_line3'></view>
+  <view class='topwrap1'>
+    <view class='topitems' bindtap='gotoorders' data-optselect='listthree'>
+      <image src='../../images/mine/gai.png'></image>
+      <text>更改地址</text>
+    </view>
+    <view class='topitems' bindtap='gotoorders' data-optselect='listfour'>
+      <image src='../../images/mine/cha.png'></image>
+      <text>查看物流</text>
+    </view>
+    <view class='topitems' bindtap='gotoorders' data-optselect='listthree'>
+      <image src='../../images/mine/huan.png'></image>
+      <text>退换货</text>
+    </view>
+  </view>
+</view>

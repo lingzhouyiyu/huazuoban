@@ -1,0 +1,160 @@
+<view class='container'>
+  <view class='centertopone'>
+    <view class='centertipwrap' bindtap='showrule'>
+      <text class='centertip colorpinks'>升级规则</text>
+      <!-- <text class='bianjiziliao colorpinks'>编辑资料</text> -->
+    </view>
+  </view>
+  <view class='floatwrap'>
+    <view class='floatcontents'>
+      <image src='{{avatarUrl}}' class='centerheader'></image>
+      <text class='centername'>{{nickName}}</text>
+      <text class='centerhuiyuannum'>会员号：{{userData.memberNo}}</text>
+      <view class='centeroptionswrap'>
+        <view class='centeroptionitem'>
+          <text class='huozannum colorpink'>{{userData.priseCount}}</text>
+          <text>获赞</text>
+        </view>
+        <view class='centeroptionitem' bindtap='gotoguanzhu'>
+          <text class='huozannum colorpink'>{{userData.followCount}}</text>
+          <text>关注</text>
+        </view>
+        <view class='centeroptionitem' bindtap='gotozan'>
+          <text class='huozannum colorpink'>{{userData.beFollowCount}}</text>
+          <text>粉丝</text>
+          <view class='guanzhudot' wx:if='{{hasGuanzhu}}'></view>
+        </view>
+      </view>
+      <view class='top'>
+        <view class='message {{tapcurrent=="0"?"txtcolor":""}}' catchtap='menutap' data-current='0'>
+          <text>笔记</text>
+          <view class='bottomline {{tapcurrent=="0"?"":"bottomlines"}}'></view>
+        </view>
+        <view class='notice {{tapcurrent=="1"?"txtcolor":""}}' catchtap='menutap' data-current='1'>
+          <text>收藏</text>
+          <view class='bottomline {{tapcurrent=="1"?"":"bottomlines"}}'></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 笔记 -->
+  <view class='myscroll'>
+    <view class='scrollwrap'>
+      <view class='falls' wx:if='{{tapcurrent==0}}'>
+        <view class='falsitem'>
+          <view class='items' wx:for='{{leftData}}' wx:key='' bindtap='gotofindDetail' data-id='{{item.id}}' data-categoryid='{{item.categoryId}}'>
+
+            <image src='{{Furl}}{{item.faceimg}}' class='itemsimage' mode='widthFix' data-current='{{index}}'></image>
+            <!-- </view>          -->
+            <text class='itemname'>{{item.talkContent}}</text>
+            <view class='deleteBtnwrap' catchtap='deleteMsg' data-id='{{item.id}}' data-openid='{{item.openId}}' wx:if='{{isAuthor}}'>            
+              <view class='deleteBtn'>删除</view>
+            </view>
+            <view class='itembottoms'>
+              <view class='myname' catchtap='gotomineCenter'>
+                <image class='fuhao' src='{{item.nickImages}}'></image>
+                <text class='meishu textgray'>{{item.nickName}}</text>
+              </view>
+
+              <view class='btnbuy' catchtap='zanclick' data-id='{{item.id}}'>
+                <image class='buyimg' src='../../images/find/{{item.iszan?"shoulight":"zan"}}.png'></image>
+                <text class='buytxt textgray'>{{item.praiseCount}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='falsitem'>
+          <view class='items' wx:for='{{rightData}}' wx:key='' bindtap='gotofindDetail' data-id='{{item.id}}' data-categoryid='{{item.categoryId}}'>
+            <image src='{{Furl}}{{item.faceimg}}' class='itemsimage' mode='widthFix'></image>
+            <text class='itemname'>{{item.talkContent}}</text>
+             <view class='deleteBtnwrap' catchtap='deleteMsg' data-id='{{item.id}}' data-openid='{{item.openId}}' wx:if='{{isAuthor}}'>
+              <view class='deleteBtn'>删除</view>
+            </view>
+            <view class='itembottoms'>
+              <view class='myname' catchtap='gotomineCenter'>
+                <image class='fuhao' src='{{item.nickImages}}'></image>
+                <text class='meishu textgray'>{{item.nickName}}</text>
+              </view>
+              <view class='btnbuy' catchtap='zanclick' data-id='{{item.id}}'>
+                <image class='buyimg' src='../../images/find/{{item.iszan?"shoulight":"zan"}}.png'></image>
+                <text class='buytxt textgray'>{{item.praiseCount}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 收藏 -->
+      <view class='falls' wx:if='{{tapcurrent==1}}'>
+        <view class='falsitem'>
+          <view class='items' wx:for='{{guanzhuleftData}}' wx:key='' bindtap='gotofindDetail' data-id='{{item.id}}' data-categoryid='{{item.categoryId}}'>
+
+            <image src='{{Furl}}{{item.faceimg}}' class='itemsimage' mode='widthFix' data-current='{{index}}'></image>
+            <!-- </view>          -->
+            <text class='itemname'>{{item.talkContent}}</text>
+            <view class='itembottoms'>
+              <view class='myname' catchtap='gotomineCenter'>
+                <image class='fuhao' src='{{item.nickImages}}'></image>
+                <text class='meishu textgray'>{{item.nickName}}</text>
+              </view>
+
+              <view class='btnbuy' catchtap='followzanclick' data-id='{{item.id}}'>
+                <image class='buyimg' src='../../images/find/{{item.iszan?"shoulight":"zan"}}.png'></image>
+                <text class='buytxt textgray'>{{item.praiseCount}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='falsitem'>
+          <view class='items' wx:for='{{guanzhurightData}}' wx:key='' bindtap='gotofindDetail' data-id='{{item.id}}' data-categoryid='{{item.categoryId}}'>
+            <image src='{{Furl}}{{item.faceimg}}' class='itemsimage' mode='widthFix'></image>
+            <text class='itemname'>{{item.talkContent}}</text>
+            <view class='itembottoms'>
+              <view class='myname' catchtap='gotomineCenter'>
+                <image class='fuhao' src='{{item.nickImages}}'></image>
+                <text class='meishu textgray'>{{item.nickName}}</text>
+              </view>
+              <view class='btnbuy' catchtap='followzanclick' data-id='{{item.id}}'>
+                <image class='buyimg' src='../../images/find/{{item.iszan?"shoulight":"zan"}}.png'></image>
+                <text class='buytxt textgray'>{{item.praiseCount}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='textgray thend'>
+        <view class='partlinsb'></view>
+        <text class='asdfasdf'>幸有花作伴·不负好时光</text>
+        <view class='partlinsb'></view>
+      </view>
+    </view>
+  </view>
+
+</view>
+<!-- 弹框代码 -->
+<view class="modalDlg" hidden="{{showModal}}">
+  <view class='agreementTitle'>升级规则</view>
+  <scroll-view class='myscrolls' scroll-y='true'>
+    <view class='itemContent'>花粉</view>
+    <view class='itemContent'>购买产品即是花粉</view>
+    <view class='itemContent'>花徒</view>
+    <view class='itemContent'>150积分（所有获得积分的行为，一天可完成）</view>
+    <view class='itemContent'>花匠</view>
+    <view class='itemContent'>1500积分（所有获得积分的行为，十天可完成）</view>
+    <view class='itemContent'>高级花匠</view>
+    <view class='itemContent'>1、3000积分（所有获得积分的行为，二十天可完成）</view>
+    <view class='itemContent'>2、28天内获得该级别再购买产品时，可多获得一束花</view>
+    <view class='itemContent'>花艺师</view>
+    <view class='itemContent'>1、4500积分（所有获得积分的行为，三十天可完成）</view>
+    <view class='itemContent'>2、48天内获得该级别升级再购买产品时，可多获得一支唇膏</view>
+    <view class='itemContent'>艺术家</view>
+    <view class='itemContent'>1、9000积分（所有获得积分的行为，两月可完成）</view>
+    <view class='itemContent'>2、68天内获得该级别升级再购买产品时，可获得一块精油冷皂</view>
+    <view class='itemContent'>生活家</view>
+    <view class='itemContent'>1、13500积分（所有获得积分的行为，三个月可完成）</view>
+    <view class='itemContent'>2、100天内获得该级别升级再购买产品时，可获得一瓶香氛蜡烛</view>
+
+  </scroll-view>
+</view>
+<view class="mask" catchtouchmove="preventTouchMove" bindtap="colserule" hidden="{{showModal}}"></view>

@@ -1,0 +1,198 @@
+page{
+  background-color: #ffffff;
+  /* background-color: red; */
+}
+.headerimg{
+  border-radius: 50%;
+}
+.yaoqingbtn{
+  width: 92%;
+  height: 80rpx;
+  background-color: #ff4081;
+  border-radius: 40rpx;
+  color: #ffffff;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:50rpx 0 20rpx 0;
+}
+.singlewrap{
+  width: 92%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+ 
+}
+.times{
+ height: 48rpx;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30rpx;
+  background-color: #f2f2f2;
+  margin-top: 25rpx;
+padding: 0 20rpx;
+
+}
+.times image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 8rpx;
+}
+.haicha{
+  font-size: 30rpx;
+  font-weight: bold;
+  /* background-color: red; */
+  margin-top: 50rpx;
+}
+.haichanum{
+  font-size: 36rpx;
+}
+.nomal{
+  font-size: 30rpx;
+}
+.kuangkuang{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 2rpx solid #f2f2f2;
+  /* background-color: yellow; */
+  margin-top: 30rpx;
+  padding-bottom: 60rpx;
+}
+.contenttop{
+  width: 92%;
+  height: 100rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.contentitem{
+  width: 92%;
+  height: 80rpx;
+  /* background-color: red; */
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.contentitem image{
+width: 60rpx;
+height: 60rpx;
+margin-right: 15rpx;
+}
+/* 多人挑战样式 */
+.manywrap{
+ width: 92%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.quanquan{
+  width: 70%;
+  height: 300rpx;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.quanquans{
+  width: 100%;
+  height: 300rpx;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.quanquanitem{
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+}
+.quanquanitems{
+border: 2rpx solid #ff4081;
+}
+.floatview{
+color: #fff;
+position: absolute;
+top: -5rpx;
+left: -10rpx;
+border-radius: 30rpx;
+z-index: 9999;
+padding: 0 10rpx;
+border: 2rpx #fff solid;
+font-size: 24rpx;
+}
+.quanquanitem image{
+border-radius: 50%;
+z-index: 7777;
+}
+.btnview{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 45rpx;
+  color: #fff;
+}
+.btnview::after{
+  border: none;
+  outline: none;
+}
+.partlines{
+  width: 100%;
+  height: 20rpx;
+  background-color: #f2f2f2;
+  margin-top: 40rpx;
+}
+.chatitle{
+  width: 92%;
+  height: 80rpx;
+  border-bottom: 2rpx solid #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.graycolor{
+  color: #b5b5b5;
+}
+.backcolor{
+  background-color: #555555;
+  margin-top: 20rpx;
+}
+.float{
+  width: 100rpx;
+  height: 100rpx;
+  position: fixed;
+  bottom: 150rpx;
+  right: 30rpx;
+  background-color: #ff4081;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #fff; */
+}
+.floatimg{
+  width: 75rpx;
+  height: 75rpx;
+}
+

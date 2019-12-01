@@ -1,0 +1,43 @@
+.container{
+  /* background-color: yellow; */
+}
+.topview{
+  width: 92%;
+  height: 250rpx;
+  /* background-color: red; */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border-bottom: 2rpx solid #f2f2f2;
+}
+.topview image{
+  width: 90rpx;
+  height: 90rpx;
+}
+.titles{
+  width: 92%;
+  margin-top: 40rpx;
+  font-size: 26rpx;
+}
+.tips{
+  width: 92%;
+  font-size: 22rpx;
+  margin-top: 20rpx;
+}
+.bottombtn{
+width: 86%;
+height: 80rpx;
+margin-top: 60rpx;
+color: #fff;
+background-color: #45AA30;
+border-radius: 10rpx;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 28rpx;
+}
+.bottombtn::after{
+border: none;
+outline: none;
+}

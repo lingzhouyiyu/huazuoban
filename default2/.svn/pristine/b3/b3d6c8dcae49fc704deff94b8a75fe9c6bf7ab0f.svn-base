@@ -1,0 +1,79 @@
+<view class='container'>
+  <view class='wraps'>
+    <view class='tops colorpinks'>
+      <view class='topleft'>待付款</view>
+      <view class='topright'>29:54后交易关闭</view>
+    </view>
+  </view>
+  <view class='part_line15'></view>
+  <view class='wraps'>
+    <view class='addresswrap'>
+      <image src='../../images/mine/gai.png'></image>
+      <view class='txtxtxtxt'>
+        <text>上海市黄浦区</text>
+        <text>杨13888888888</text>
+      </view>
+    </view>
+  </view>
+  <view class='part_line15'></view>
+  <view class='wraps'>
+    <view class='goodsmessage'>
+      <view class='titles'>商品信息</view>
+      <view class='messageitem'>
+        <view class='itemsleft'>
+          <image src='../../images/mall/test.jpg'></image>
+        </view>
+        <view class='itemsright'>
+          <view class='nameitem'>
+            <text>绿萝双子星</text>
+            <text>￥24.9</text>
+          </view>
+          <view class='nameitems textgray'>
+            <text>产品：绿萝双子星</text>
+            <text>x1</text>
+          </view>
+        </view>
+      </view>
+      <view class='optionsitems'>
+        <text class='textgray'>小计：</text>
+        <text>￥24.9</text>
+      </view>
+      <view class='optionsitems'>
+        <text class='textgray'>运费：</text>
+        <text>￥0.00</text>
+      </view>
+      <view class='optionsitems'>
+        <text class='textgray'>优惠/抵扣：</text>
+        <text>-￥0.00</text>
+      </view>
+      <view class='optionsitems'>
+        <text class='textgray'>实付：</text>
+        <text>￥24.9</text>
+      </view>
+    </view>
+  </view>
+  <view class='part_line15'></view>
+  <view class='wraps'>
+    <view class='bottomwrap'>
+      <view class='optionsitems'>
+        <text class='textgray'>订单编号：</text>
+        <text>WN4567153554612454</text>
+      </view>
+      <view class='optionsitems'>
+        <text class='textgray'>下单时间：</text>
+        <text>2019-02-17 13:25:54</text>
+      </view>
+      <view class='optionsitems'>
+        <text class='textgray'>支付方式：</text>
+        <text>微信</text>
+      </view>
+    </view>
+  </view>
+  <view class='bottoptions'>
+    <view class='bottleft'>
+      <text class='botttxtxt'>应付金额</text>
+      <text class='colorpinks sadfasdfa'>￥24.9</text>
+    </view>
+    <view class='bottright backcolorpinks'>去支付</view>
+  </view>
+</view>

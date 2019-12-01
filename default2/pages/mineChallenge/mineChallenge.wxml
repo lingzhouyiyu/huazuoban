@@ -1,0 +1,23 @@
+<view class='container'>
+  <!-- 个人挑战 -->
+  <view class='singlewrap'>
+    <view class='times textgray'>
+      <image src='../../images/mall/timedown.png'></image>
+      <text>{{teamData.difftime}}</text>
+    </view>
+    <view class='haicha'>
+      <text class='nomal'>还差</text>
+      <text class='haichanum colorpinks'>{{effectiveSize-buyList.length}}</text>
+      <text class='nomal'> 人，点击右上角发送给好友</text>
+    </view>
+    <button class='yaoqingbtn' open-type='share'>邀请好友购买</button>
+    <view class='kuangkuang'>
+      <view class='contenttop'>购买成员列表</view>
+      <view class='contentitem' wx:for='{{buyList}}' wx:key=''>
+        <image src='{{item.avatarUrl}}' class='headerimg'></image>
+        <text>{{item.nickName}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>

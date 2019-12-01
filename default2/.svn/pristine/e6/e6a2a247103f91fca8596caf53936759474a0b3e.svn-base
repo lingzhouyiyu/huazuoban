@@ -1,0 +1,205 @@
+
+page{
+  background-color: #f2f2f2;
+}
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.myscroll{
+  width: 100%;
+}
+.scrollwrap{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.thend{
+  font-size: 24rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2rpx;
+  /* font-style: italic; */
+  margin-bottom: 20rpx;
+  margin-top: 50rpx;
+}
+.partlinsb{
+  width: 20%;
+height: 1rpx;
+background-color: #888;
+}
+.asdfasdf{
+  margin: 0 10rpx;
+}
+.ordertopwrap{
+  width: 100%;
+  height: 92rpx;
+  background-color: #fff;
+  border-top: 2rpx solid #f2f2f2;
+}
+.itemswrap{
+  width: 96%;
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.orderoptionsitem{
+/* background-color: green; */
+margin-left: 30rpx;
+width: 18%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+
+color: #888;
+}
+.orderoptionsitems{
+/* background-color: green; */
+margin-left: 30rpx;
+width: 18%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: center;
+font-weight: bold;
+color: #ff4081;
+}
+.bottomline {
+  width: 75%;
+  height: 5rpx;
+  margin-top: 23rpx;
+  background-color: #ff4081;
+}
+
+.bottomlines {
+  width: 75%;
+  height: 5rpx;
+   margin-top: 23rpx;
+  background-color: #fff;
+}
+/* 订单样式 */
+.ordercontentswrap{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+.order_contenttop{
+  width: 92%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  background-color: #fff;
+}
+.order_contentswrap{
+  width: 100%;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30rpx 0;
+}
+.order_contents{
+  width: 92%;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.ordergoodsimg{
+  width: 22%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.ordergoodsimg image{
+width: 130rpx;
+height: 130rpx;
+}
+.ordergoodscontent{
+  width: 78%;
+ 
+}
+.ordertitles{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.orderxtxtxt{
+  width: 85%;
+ 
+  font-size: 30rpx;
+}
+.ordercontenttxt{
+  width: 85%;
+ margin-top:10rpx;
+  font-size: 26rpx;
+}
+.orderpaymsg{
+  width: 92%;
+  height: 70rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+background-color: #fff;
+}
+.msgtxt{
+  margin-right: 10rpx;
+}
+.orderbottombtnwrap{
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.orderbottombtn{
+  width: 92%;
+  height: 100rpx;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+/* background-color: red; */
+position: relative;
+}
+.btnitemss{
+  border-radius: 10rpx;
+  border: 2rpx solid #f2f2f2;
+  font-size: 20rpx !important;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute !important;
+  right:0;
+  top: 30rpx;
+}
+
+button{
+  border: none !important;
+  outline: none !important;
+  background-color: #fff !important;
+   font-size: 20rpx !important;
+}
+.mybtn{
+  border: none !important;
+  outline: none !important;
+  background-color: #fff !important;
+}

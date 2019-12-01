@@ -1,0 +1,8 @@
+<view class='container'>
+  <view class='contentwrap'>
+    <view class='contentitem' wx:for='{{flowerList}}' wx:key='' bindtap='gotogrowingDetail' data-goodsid='{{item.id}}'>
+      <image src='{{Furl}}{{item.image}}' mode='widthFix'></image>
+      <text>{{item.goodsName}}</text>
+    </view>
+  </view>
+</view>

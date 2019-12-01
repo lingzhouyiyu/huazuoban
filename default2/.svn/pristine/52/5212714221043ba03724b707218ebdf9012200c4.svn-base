@@ -1,0 +1,113 @@
+<view class='container' wx:if='{{isShow}}'>
+  <view class='wraps'>
+    <view class='findtopwrap'>
+      <view class='findtop'>
+        <view class='findleftimg' bindtap='gotoadd'>
+          <image src='../../images/find/gotoadd.png'></image>
+        </view>
+        <view class='search'>
+          <image class='searchimg' src='../../images/find/inputleft.png'></image>
+          <input type='text' confirm-type='search'  bindconfirm='search'   class='searchinput' placeholder="{{searchTxt}}" placeholder-class='placeholderclass' cursor-spacing="15"></input>
+        </view>
+        <view class='findrightimg' bindtap='gotomineCenters'>
+          <image src='../../images/find/gotominecenter.png'></image>
+        </view>
+      </view>
+      <view class='top'>
+        <view class='message {{tapcurrent=="0"?"txtcolor":""}}' catchtap='menutap' data-current='0'>
+          <text>发现</text>
+          <view class='bottomline {{tapcurrent=="0"?"":"bottomlines"}}'></view>
+        </view>
+        <view class='notice {{tapcurrent=="1"?"txtcolor":""}}' catchtap='menutap' data-current='1'>
+          <text>关注</text>
+          <view class='bottomline {{tapcurrent=="1"?"":"bottomlines"}}'></view>
+        </view>
+      </view>
+    </view>
+    <view class='partline'></view>
+  </view>
+  <!-- 发现 -->
+  <scroll-view class='myscroll' bindscrolltoupper='shuaxin' bindscrolltolower='jiazai' style="height:{{windowheight?windowheight+'px':'auto'}}" scroll-y='true'>
+    <view class='scrollwrap'>
+      <view class='falls' wx:if='{{tapcurrent==0}}'>
+        <view class='falsitem'>
+          <view class='items' wx:for='{{leftData}}' wx:key='' bindtap='gotofindDetail' data-id='{{item.id}}' data-categoryid='{{item.categoryId}}'>
+            <!-- <view style='{{realImgHeight}}<160?"width:{{windowWidth*0.94*0.485}}px;height:160px;overflow: hidden;":""'> -->
+            <image src='{{Furl}}{{item.faceimg}}' class='itemsimage' mode='widthFix' data-current='{{index}}' bindload='imgHeight'></image>
+            <!-- </view>          -->
+            <text class='itemname'>{{item.talkContent}}</text>
+            <view class='itembottoms'>
+              <view class='myname' catchtap='gotomineCenter' data-openid='{{item.openId}}' data-avatarurl='{{item.nickImages}}' data-nickname='{{item.nickName}}'>
+                <image class='fuhao' src='{{item.nickImages}}'></image>
+                <text class='meishu textgray'>{{item.nickName}}</text>
+              </view>
+              <view class='btnbuy' catchtap='zanclick' data-id='{{item.id}}'>
+                <image class='buyimg' src='../../images/find/{{item.iszan?"shoulight":"zan"}}.png'></image>
+                <text class='buytxt textgray'>{{item.praiseCount}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='falsitem'>
+          <view class='items' wx:for='{{rightData}}' wx:key='' bindtap='gotofindDetail' data-id='{{item.id}}' data-categoryid='{{item.categoryId}}'>
+            <image src='{{Furl}}{{item.faceimg}}' class='itemsimage' mode='widthFix'></image>
+            <text class='itemname'>{{item.talkContent}}</text>
+            <view class='itembottoms'>
+              <view class='myname' catchtap='gotomineCenter' data-openid='{{item.openId}}' data-avatarurl='{{item.nickImages}}' data-nickname='{{item.nickName}}'>
+                <image class='fuhao' src='{{item.nickImages}}'></image>
+                <text class='meishu textgray'>{{item.nickName}}</text>
+              </view>
+              <view class='btnbuy' catchtap='zanclick' data-id='{{item.id}}'>
+                <image class='buyimg' src='../../images/find/{{item.iszan?"shoulight":"zan"}}.png'></image>
+                <text class='buytxt textgray'>{{item.praiseCount}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <!-- 关注 -->
+      <view class='falls' wx:if='{{tapcurrent==1}}'>
+        <view class='falsitem'>
+          <view class='items' wx:for='{{guanzhuleftData}}' wx:key='' bindtap='gotofindDetail' data-id='{{item.id}}' data-categoryid='{{item.categoryId}}'>
+            <!-- <view style='{{realImgHeight}}<160?"width:{{windowWidth*0.94*0.485}}px;height:160px;overflow: hidden;":""'> -->
+            <image src='{{Furl}}{{item.faceimg}}' class='itemsimage' mode='widthFix' data-current='{{index}}' bindload='imgHeight'></image>
+            <!-- </view>          -->
+            <text class='itemname'>{{item.talkContent}}</text>
+            <view class='itembottoms'>
+              <view class='myname' catchtap='gotomineCenter' data-openid='{{item.openId}}' data-avatarurl='{{item.nickImages}}' data-nickname='{{item.nickName}}'>
+                <image class='fuhao' src='{{item.nickImages}}'></image>
+                <text class='meishu textgray'>{{item.nickName}}</text>
+              </view>
+              <view class='btnbuy' catchtap='followzanclick' data-id='{{item.id}}'>
+                <image class='buyimg' src='../../images/find/{{item.iszan?"shoulight":"zan"}}.png'></image>
+                <text class='buytxt textgray'>{{item.praiseCount}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='falsitem'>
+          <view class='items' wx:for='{{guanzhurightData}}' wx:key='' bindtap='gotofindDetail' data-id='{{item.id}}' data-categoryid='{{item.categoryId}}'>
+            <image src='{{Furl}}{{item.faceimg}}' class='itemsimage' mode='widthFix'></image>
+            <text class='itemname'>{{item.talkContent}}</text>
+            <view class='itembottoms'>
+              <view class='myname' catchtap='gotomineCenter' data-openid='{{item.openId}}' data-avatarurl='{{item.nickImages}}' data-nickname='{{item.nickName}}'>
+                <image class='fuhao' src='{{item.nickImages}}'></image>
+                <text class='meishu textgray'>{{item.nickName}}</text>
+              </view>
+              <view class='btnbuy' catchtap='followzanclick' data-id='{{item.id}}'>
+                <image class='buyimg' src='../../images/find/{{item.iszan?"shoulight":"zan"}}.png'></image>
+                <text class='buytxt textgray'>{{item.praiseCount}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='textgray thend'>
+        <view class='partlinsb'></view>
+        <text class='asdfasdf'>幸有花作伴·不负好时光</text>
+        <view class='partlinsb'></view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

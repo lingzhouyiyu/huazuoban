@@ -1,0 +1,208 @@
+page{
+  background-color: #f2f2f2;
+}
+.pointstop{
+  width: 100%;
+  height: 264rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* background-color: red; */
+}
+.pointsrule{
+width: 180rpx;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 22rpx;
+position: absolute;
+top: 40rpx;
+right: 5rpx;
+/* background-color: yellow; */
+}
+.pointsrule image{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 10rpx;
+}
+.pointstopcenter{
+  width: 200rpx;
+  height: 200rpx;
+color: #fff;
+font-size: 26rpx;
+
+display: flex;
+border-radius: 50%;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.pointsshuzi{
+font-size: 44rpx;
+font-weight: bold;
+}
+
+/* 分割线样式 */
+.pointspart{
+width: 100%;
+height: 120rpx;
+background-color: #f2f2f2;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.pointspartleft{
+width: 41%;
+height: 2rpx;
+background-color: gray;
+}
+.pointsparttxt{
+  width: 18%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+/* 发现样式 */
+
+/* 瀑布样式 */
+
+.falls {
+  width: 92%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+}
+
+.falsitem {
+  width: 48%;
+  height: auto;
+}
+
+.items {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  padding-bottom: 20rpx;
+}
+
+.itemsimage {
+  width: 100%;
+}
+
+.itemname {
+  width: 90%;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  font-size: 30rpx;
+}
+
+.itembottoms {
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.myname {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 24rpx;
+  text-decoration: line-through;
+}
+
+.btnbuy {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 26rpx;
+  border-radius: 10rpx;
+  padding: 7rpx 0;
+  margin-top: 15rpx;
+}
+/* 说明弹框 */
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background:rgb(90, 90, 90);
+  z-index: 9000;
+  opacity: 0.9;
+}
+ 
+.modalDlg {
+  width: 650rpx;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  margin: -450rpx 32rpx;
+  background-color: #fff;
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx 20rpx 30rpx  20rpx;
+}
+ 
+.agreementTitle {
+  position: relative;
+  font-size: 30rpx;
+  margin-bottom: 32rpx;
+  color: #000;
+  font-weight:bold;
+}
+.myscroll{
+  width: 100%;
+  height: 500rpx;
+  /* background-color: red; */
+}
+.itemTitle{
+width: 100%;
+font-size: 28rpx;
+font-weight: bold;
+margin-bottom: 30rpx;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.itemContent{
+  width: 100%;
+font-size: 26rpx;
+font-weight: bold;
+margin-bottom: 20rpx;
+display: flex;
+justify-content: flex-start;
+align-items: flex-start;
+}
+.itemContents{
+  width: 100%;
+font-size: 26rpx;
+font-weight: bold;
+margin-bottom: 10rpx;
+display: flex;
+justify-content: flex-start;
+align-items: flex-start;
+text-indent: 2em;
+}
+
+

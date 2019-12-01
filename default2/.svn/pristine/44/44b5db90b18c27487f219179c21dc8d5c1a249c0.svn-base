@@ -1,0 +1,29 @@
+<view class='container'>
+  <view class='topwrap'>
+    <view class='top'>
+      <view class='message {{tapcurrent=="0"?"txtcolor":""}}' catchtap='menutap' data-current='0'>
+        <text>个人消息</text>
+        <view class='bottomline {{tapcurrent=="0"?"":"bottomlines"}}'></view>
+      </view>
+      <view class='notice {{tapcurrent=="1"?"txtcolor":""}}' catchtap='menutap' data-current='1'>
+        <text>系统消息</text>
+        <view class='bottomline {{tapcurrent=="1"?"":"bottomlines"}}'></view>
+      </view>
+    </view>
+  </view>
+  <view class='personalmsgwrap'>
+    <!-- 个人 -->
+    <view class='personalmsg' wx:if='{{tapcurrent=="0"}}' wx:for='{{personalList}}' wx:key='' data-articleid='{{item.articleId}}' data-categoryid='{{item.categoryId}}' data-id='{{item.id}}' bindtap='gotocommentDetail'>
+      <view class='textgray messagetime'>
+        <view>{{item.createTime}}</view>
+        <view class='{{item.lookType=="0"?"dots":"dot"}}'></view>
+      </view>
+      <view class='messagetxt'>{{item.message}}</view>
+    </view>
+    <!-- 系统 -->
+    <view class='personalmsg' wx:if='{{tapcurrent=="1"}}' wx:for='{{systemList}}' wx:key=''>
+      <view class='textgray messagetime'>{{item.createTime}}</view>
+      <view class='messagetxt'>{{item.noticeContent}}</view>
+    </view>
+  </view>
+</view>

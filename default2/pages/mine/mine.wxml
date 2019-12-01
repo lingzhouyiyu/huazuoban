@@ -1,0 +1,145 @@
+<view class='container'>
+
+  <scroll-view class='myscroll' style="height:{{windowheight?windowheight+'px':'auto'}}" scroll-y='true'>
+    <view class='centertopone'>
+      <view class='centertipwrap'>
+        <view class='centertip colorpinks' bindtap='gotomineCenter'>
+          <text>个人主页</text>
+          <view class='guanzhudot' wx:if='{{hasGuanzhu}}'></view>
+        </view>
+        <text class='bianjiziliao colorpinks'>LV:{{centerUserInfo.leavalName}}</text>
+      </view>
+    </view>
+    <view class='floatwrap'>
+      <view class='floatcontents'>
+        <image src='{{avatarUrl}}' class='centerheader' bindtap='gotomineCenter'></image>
+        <text class='centername weight' bindtap='gotomineCenter'>{{nickName}}</text>
+        <text class='centerhuiyuannum' bindtap='gotomineCenter'>会员号：{{centerUserInfo.memberNo}}</text>
+        <view class='centeroptionswrap'>
+          <view class='centeroptionitem' bindtap='gotomineCollect'>
+            <text class='huozannum colorpink'>{{centerUserInfo.collentCount}}</text>
+            <text class=''>收藏</text>
+          </view>
+          <view class='centeroptionitem' bindtap='gotomineLook'>
+            <text class='huozannum colorpink'>{{centerUserInfo.lookCount}}</text>
+            <text class=''>足迹</text>
+          </view>
+          <view class='centeroptionitem' bindtap='gotominepoints'>
+            <text class='huozannum colorpink'>{{centerUserInfo.opints}}</text>
+            <text class=''>积分</text>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <!-- <view class='mingtop backcolorpink'>
+    <view class='mineheader' bindtap='gotomineCenter'>
+      <image src='{{avatarUrl}}'></image>
+      <view class='headertxt'>
+        <text class='adasdas'>{{nickName}}</text>
+        <text class='huiyuan'>会员号：3654</text>
+      </view>
+    </view>
+    <view class='biground backcolorpinks'>
+      <image src='../../images/mine/juhua.png'></image>
+      <text>lv.花宝宝</text>
+    </view>
+    <view class='smallround colorpinks' bindtap='gotomineCenter'>
+      <text>个人主页</text>
+    </view>
+  </view>
+  <view class='topopwrap backcolorgray'>
+    <view class='topopitem'>
+      <view class='topopitems' bindtap='gotomineCollect'>
+        <text class='topopnum'>2</text>
+        <text>收藏</text>
+      </view>
+      <view class='topopitems' bindtap='gotomineCollect'>
+        <text class='topopnum'>65</text>
+        <text>足迹</text>
+      </view>
+      <view class='topopitems' bindtap='gotominepoints'>
+        <text class='topopnum'>45</text>
+        <text>积分</text>
+      </view>
+    </view>
+  </view> -->
+    <view class='myoderwrap'>
+      <view class='myoder' bindtap='gotoorders' data-optselect='listone'>
+        <view class='myordertxt'>我的订单</view>
+        <view class='myorderright'>
+          <text class='textgray'>查看全部</text>
+          <image src='../../images/mall/goto.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='mmpwrap'>
+      <view class='mmpoption'>
+        <view class='mmpitem' bindtap='gotoorders' data-optselect='listtwo'>
+          <image src='../../images/mine/dai.png'></image>
+          <text class='textgray'>待付款</text>
+           <view class='tipsdots' wx:if='{{waitPayCount>0}}'>{{waitPayCount}}</view>
+        </view>
+        <view class='mmpitem' bindtap='gotoorders' data-optselect='listthree'>
+          <image src='../../images/mine/fa.png'></image>
+          <text class='textgray'>待发货</text>
+          <view class='tipsdots' wx:if='{{waitSendCount>0}}'>{{waitSendCount}}</view>
+        </view>
+        <view class='mmpitem' bindtap='gotoorders' data-optselect='listfour'>
+          <image src='../../images/mine/huo.png'></image>
+          <text class='textgray'>待收货</text>
+          <view class='tipsdots' wx:if='{{waitReceiveCount>0}}'>{{waitReceiveCount}}</view>
+        </view>
+        <view class='mmpitem' bindtap='gotoorders' data-optselect='listfive'>
+          <image src='../../images/mine/ping.png'></image>
+          <text class='textgray'>已完成</text>
+        </view>
+        <view class='mmpitem' bindtap='gotorefund'>
+          <image src='../../images/mine/tui.png'></image>
+          <text class='textgray'>退款/售后</text>
+          <view class='tipsdots' wx:if='{{waitReturnCount>0}}'>{{waitReturnCount}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='part_line20'></view>
+    <view class='mmpwrap'>
+      <view class='mmpoptions textgray'>
+        <view class='mmpitems' bindtap='gotominemessage'>
+          <image src='../../images/mine/xiao.png'></image>
+          <text class=''>消息中心</text>
+          <view class='tipsdot' wx:if='{{unreadCount>0}}'>{{unreadCount}}</view>
+        </view>
+        <view class='mmpitems' bindtap='gotominesignin'>
+          <image src='../../images/mine/qian.png'></image>
+          <text class=''>签到有礼</text>
+        </view>
+        <view class='mmpitems' bindtap="gotomineChallenge">
+          <image src='../../images/mine/tiao.png'></image>
+          <text class=''>我的挑战</text>
+        </view>
+        <view class='mmpitems' bindtap='gotominecard'>
+          <image src='../../images/mine/ka.png'></image>
+          <text class=''>卡券红包</text>
+        </view>
+      </view>
+    </view>
+    <view class='part_line3'></view>
+    <view class='mmpwrap'>
+      <view class='mmpoptionss textgray'>
+        <view class='mmpitems' bindtap='gotomineaddress'>
+          <image src='../../images/mine/shou.png'></image>
+          <text>收货地址</text>
+        </view>
+        <view class='mmpitems' bindtap='gotomineservice'>
+          <image src='../../images/mine/ke.png'></image>
+          <text>客服/帮助</text>
+        </view>
+        <view class='mmpitems' bindtap='gotominecode'>
+          <image src='../../images/mine/wo.png'></image>
+          <text>我的二维码</text>
+        </view>
+      </view>
+    </view>
+
+  </scroll-view>
+</view>

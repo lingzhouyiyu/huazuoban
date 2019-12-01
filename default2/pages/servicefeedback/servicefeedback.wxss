@@ -1,0 +1,61 @@
+page{
+  background-color: #f2f2f2;
+}
+.contentwrap{
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.topimg{
+width: 92%;
+/* height: 300rpx; */
+margin-top: 30rpx;
+height: auto
+}
+.topimg image{
+  width: 100%;
+
+}
+.area{
+  width: 85.5%;
+  height: 300rpx;
+  padding: 25rpx;
+  margin-top: 30rpx;
+  /* background-color: red; */
+  border: 2rpx solid #f2f2f2;
+  border-radius: 8rpx;
+}
+.myinput{
+  width: 88%;
+  height: 90rpx;
+  /* background-color: red; */
+  margin-top: 30rpx;
+    padding-left: 30rpx;
+     border: 2rpx solid #f2f2f2;
+  border-radius: 8rpx;
+}
+.myinputs{
+  width: 88%;
+  height: 90rpx;
+  /* background-color: red; */
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  padding-left: 30rpx;
+   border: 2rpx solid #f2f2f2;
+  border-radius: 8rpx;
+}
+.submitbtn{
+  width: 94%;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 45rpx;
+  margin-top: 60rpx;
+}

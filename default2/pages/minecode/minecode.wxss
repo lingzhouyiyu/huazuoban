@@ -1,0 +1,73 @@
+page{
+ background-color: #fff;
+}
+
+.canvas-box{
+  width: 92%;
+  height: auto;
+  position: fixed;
+  left: 28rpx;
+  top: 20rpx;
+  padding: 0;
+  /* background-color: green;  */
+ z-index: 100;
+ border: 5rpx solid #ff4081;
+}
+.canvas-boxs{
+  width: 94%;
+  height: auto;
+  position: fixed;
+  left: 0;
+  top: 20rpx;
+  padding: 0;
+  border-radius: 15rpx;
+  /* background-color: green; */
+  z-index: 999;
+}
+.hide{
+  display: none;
+}
+.yaoqing{
+  width: 80%;
+  height: 90rpx;
+  border-radius: 50rpx;
+  position: fixed;
+  bottom: 30rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34rpx;
+  border: none;
+  outline: none;
+}
+.yaoqing::after{
+    border: none;
+  outline: none;
+}
+.tips{
+
+  font-size: 30rpx;
+    color: rgb(74, 74, 74);
+     z-index: 9999;
+     position: fixed;
+     bottom: 140rpx;
+}
+.zhinan{
+  font-size: 28rpx;
+  color: #fff;
+  width: 156rpx;
+  height: 56rpx;
+  position: fixed;
+  top: 20rpx;
+  left: 0;
+  background-color: #bcbcbc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-right-radius: 30rpx;
+   border-top-right-radius: 30rpx;
+}
+
+
+
